@@ -1,7 +1,7 @@
 ---
 title: "JsPsychR"
 subtitle: "Open source, standard tooling for experimental protocols: towards Registered reports"
-author: "Gorka Navarrete https://fosstodon.org/@gorkang"
+author: "Gorka Navarrete and Herman Valencia"
 embed-resources: true
 output-file: "index.html"
 format: revealjs
