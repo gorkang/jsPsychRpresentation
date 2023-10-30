@@ -92,7 +92,7 @@ Old school:
 ::::
 
 
-##  {background-image="img/help-run.gif"}
+## {background-image="img/help-run.gif"}
 
 
 
@@ -262,7 +262,7 @@ Some would work in certain computers, other did not. Output data wildly differen
 
 ## Our wish list
 
-![](img/euphoria.webp){width=50% fig-align="center"}
+![](img/euphoria.webp){width=40% fig-align="center"}
 
 ## Our wish list {background-color="white" background-image="img/magic.png" background-size="40%" background-position="bottom right"}
 
@@ -609,7 +609,9 @@ rstudioapi::navigateToFile("R/script-full-process.R")
 {{< video https://www.youtube.com/watch?v=2OXI9lzE3zU width="600" height="400" >}}
 
 
-## Survey Experiment Issues {background-image="img/survey-issues.png" background-size="50%" background-position="bottom"}
+## Survey Experiment Issues 
+
+![](img/survey-issues.png){width=50% fig-align="center"}
 
 ## Survey results
 
@@ -683,30 +685,32 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 
 ## Can jsPsych really help? (1/2)
 
-- With jsPsychR, protocols are standardized and with (mostly) clean code 
-
-  + Less errors in protocols
+- With jsPsychR, protocols are standardized with (mostly) clean code, open source, and based on web standards 
 
 - Data preparation is 90% automatic, standardized, and beautiful 
 
-  + Less errors in data preparation
+- Less errors in protocols and in data preparation
 
-- When errors are found and fixed, **old** protocols can benefit from the corrections, old results can be checked, ...
+- Time from idea to protocol much lower
+
+- When errors are found and fixed, **old protocols can benefit from the corrections**, old results can be checked, ...
 
 
 ## Can jsPsych really help? (2/2)
 
-- Super easy to work on analysis <span style="color:darkgreen;">before</span> collecting human data
+- Trivial to work on analysis <span style="color:darkgreen;">before</span> collecting human data
 
 - Much easier to write up a good analysis plan, share it, improve it, ...
 
+- Create fully reproducible papers and results' reports easily
+
 - Sharing protocol, materials, data preparation is trivial (single command)
 
-- Creating future proof full reproducible projects (with Docker) is one command away
+- Creating future-proof fully reproducible data preparation projects (with Docker) is one command away
 
 
 
-## RR + jsPsychR
+## jsPsychR &#9829; RR
 
 ![](img/reproducibility-crisis2_solved.jpeg){width=65% fig-align="center"}
 
@@ -734,7 +738,7 @@ And our manual:
 
 <BR><BR>
 
-Gorka Navarrete   
+<span style="color:grey;">Gorka Navarrete</span>
 
 gorkang\@gmail.com  
 
