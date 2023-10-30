@@ -107,16 +107,45 @@ Old school:
 @nosek2022replicability
 
 
-## Registered reports (RR) {background-image="img/unicorn.png" background-size="30%" background-position="bottom right"}
+## Registered reports (RRs) {background-image="img/unicorn.png" background-size="30%" background-position="bottom right"}
 
 <BR><BR>
 _RRs were conceived to alter the incentives for authors and journals away from producing novel, positive, clean findings and towards conducting and publishing rigorous research on important questions._ @soderberg2021initial
 
 
-## RR do help {background-image="img/RR.png" background-size="40%" background-position="bottom right"}
+## RRs do help {.smaller background-image="img/RRs.png" background-size="40%" background-position="right"}
+
+:::: {.columns}
 
 
-## How RR work {background-image="img/RR.webp" background-size="50%" background-position="bottom"}
+::: {.column width="60%"}
+
+
+RRs outperformed comparison papers on all 19 criteria [@soderberg2021initial]
+
+Sizable improvements in:
+
+- rigour of methodology and analysis  and overall paper quality 
+
+Statistically indistinguishable in:
+
+- novelty and creativity
+
+
+_RRs could improve research quality while reducing publication bias..._
+
+:::
+
+::: {.column width="40%"}
+
+
+<!-- ![](img/RRs.png){width=300, height=300, fig-align="right"} -->
+:::
+
+::::
+
+
+## How RRs work {background-image="img/RRs.webp" background-size="50%" background-position="bottom"}
 
 - Write introduction, method, ... before collecting data!
 - Send to journal for review
@@ -124,7 +153,7 @@ _RRs were conceived to alter the incentives for authors and journals away from p
 - Once you get _In principle acceptance_, collect human data, run analysis, write up, and send for a final review
 
 
-## RR advantages
+## RRs advantages
 
 - More open, preregistered, reproducible by default  
 
@@ -168,7 +197,7 @@ _RRs were conceived to alter the incentives for authors and journals away from p
 ::::
 
 
-## Our path towards RR
+## Our path towards RRs
 
 
 <BR><BR>
@@ -202,11 +231,13 @@ Mostly, pragmatic aspects guided the decision: lab history and resources, coding
 
 ## Issues {background-image="img/this-is-fine.jpg" background-size="30%" background-position="bottom right"}
 
-Each protocol started almost from scratch. Sometimes a single task would define the technology used.<BR><BR>
+- Each protocol started almost from scratch. A single pre-existing task would define the technology used.
 
-At some point, we had multiple implementations of the same tasks in different technologies, not always exact replicas.<BR><BR>
+- Multiple implementations of the same tasks in different technologies, not always exact replicas, not always easy to find.
 
-Some would work in certain computers, other did not. Output data wildly different.<BR><BR>
+- Some would work in certain computers, other did not.
+
+- Output data wildly different, data preparation a hard task and error prone.
 
 
 ## Issues Survey
@@ -325,7 +356,7 @@ The final goal is to help you have the data preparation and analysis ready befor
 - Used by researchers in Chile, Colombia, Spain  
 - Everything is open source: [https://github.com/gorkang/jsPsychRmanual](https://github.com/gorkang/jsPsychRmanual)
 - 2 publications using the system (50% Registered reports) + more in the pipeline...  
-- So many errors caught early... ( ͡ᵔ ͜ʖ ͡ᵔ )
+- **So many errors** caught early... ( ͡ᵔ ͜ʖ ͡ᵔ )
 
 
 ## The team
@@ -681,7 +712,7 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 ## Back to Registered reports
 
 <BR><BR><BR>
-![](img/RR.webp)
+![](img/RRs.webp)
 
 ## Can jsPsych really help? (1/2)
 
@@ -710,20 +741,20 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 
 
 
-## jsPsychR &#9829; RR
+## jsPsychR &#9829; RRs
 
 ![](img/reproducibility-crisis2_solved.jpeg){width=65% fig-align="center"}
 
 ## More information
 
-For more information about RR, templates, checklists, list of participating journals (\>300), etc.:  
+For more information about RRs, templates, checklists, list of participating journals (\>300), etc.:  
 
 - [https://www.cos.io/initiatives/registered-reports](https://www.cos.io/initiatives/registered-reports)
 
 
 Also, check out the future:  
 
-- RR v2: [Peer community in](https://peercommunityin.org/)
+- RRs v2: [Peer community in](https://peercommunityin.org/)
 
 And our manual:
 
