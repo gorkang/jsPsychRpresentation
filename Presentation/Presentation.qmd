@@ -31,7 +31,7 @@ Old school:
 4) Significant result &#8594; Write paper
 
 
-## Some issues {background-image="img/issues-scientific-method-osf.png" background-size="80%" background-position="bottom" .smaller}
+## Some issues {background-image="img/issues-scientific-method-osf.png" background-size="60%" background-position="bottom" .smaller}
 
 [https://www.cos.io/initiatives/registered-reports](https://www.cos.io/initiatives/registered-reports)
 
@@ -113,7 +113,7 @@ Old school:
 _RRs were conceived to alter the incentives for authors and journals away from producing novel, positive, clean findings and towards conducting and publishing rigorous research on important questions._ @soderberg2021initial
 
 
-## RR do help {background-image="img/RR.png" background-size="40%"}
+## RR do help {background-image="img/RR.png" background-size="40%" background-position="bottom right"}
 
 
 ## How RR work {background-image="img/RR.webp" background-size="50%" background-position="bottom"}
@@ -260,8 +260,9 @@ Some would work in certain computers, other did not. Output data wildly differen
 - Idiosyncratic analyses, some of which require licensed closed software (SPSS, Matlab,...)
 
 
-## Our wish list {background-image="img/euphoria.webp"  background-size="40%" background-position="bottom"}
+## Our wish list
 
+![](img/euphoria.webp){width=50% fig-align="center"}
 
 ## Our wish list {background-color="white" background-image="img/magic.png" background-size="40%" background-position="bottom right"}
 
@@ -272,6 +273,10 @@ Some would work in certain computers, other did not. Output data wildly differen
 - Easy to create and analyze paradigms
 - Balancing participants
 - Online/offline
+
+
+
+# The present
 
 
 
@@ -309,20 +314,18 @@ A big catalog of tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker
 The final goal is to help you have the data preparation and analysis ready before collecting any real data, reducing errors in the protocols, and making the move towards registered reports easier.
 
 
-# The present
-
-## So far {.hscroll .scrollable .smaller}
+## So far {.smaller}
 
 - 3 main R packages (jsPsychMakeR, jsPsychMonkeys, jsPsychHelpeR)
 - 1 R package for Administration tasks (jsPsychAdmin)  
-- \>80 pages [manual](https://gorkang.github.io/jsPsychRmanual/)  
+- \> 80 pages [manual](https://gorkang.github.io/jsPsychRmanual/)  
 - ~100 tasks ready (with maker and helper scripts, plus original paper for most)  
-- \> 30 online protocols + an unknown number of offline (lab) protocols  
-- \> 5000 participants in online protocols  
-- Used in Chile, Colombia, Spain  
-- Everything is open source: https://github.com/gorkang/jsPsychRmanual
+- \> 30 online protocols with \> 5000 participants (Prolific Academic, Social Media, etc.)  
+- A number of offline (lab) protocols and participants  
+- Used by researchers in Chile, Colombia, Spain  
+- Everything is open source: [https://github.com/gorkang/jsPsychRmanual](https://github.com/gorkang/jsPsychRmanual)
 - 2 publications using the system (50% Registered reports) + more in the pipeline...  
-
+- So many errors caught early... ( ͡ᵔ ͜ʖ ͡ᵔ )
 
 
 ## The team
@@ -333,11 +336,11 @@ Current developers:
 
 Initial idea and development: 
 
-- Gorka Navarrete, Nicolas Sanchez-Fuenzalida, Nicolas Alarcón, Alejandro Cofre
+- Gorka Navarrete, Nicolas Sanchez-Fuenzalida, Nicolas Alarcón, Alejandro Cofre, Herman Valencia
 
 Discussions, ideas, testing: 
 
-- Esteban Hurtado, Alvaro Rivera, Juan Pablo Morales
+- Esteban Hurtado, Alvaro Rivera, Juan Pablo Morales, ...
 
 
 ## jsPsychR tools
@@ -498,7 +501,7 @@ Release a single Monkey and take a look:
 ```{r}
 
 jsPsychMonkeys::release_the_monkeys(
-  uid = 1,
+  uid = 11,
   initial_wait = 0,
   wait_retry = 0,
   local_folder_tasks = "~/Downloads/protocol999/",
@@ -510,7 +513,7 @@ Release 10 Monkeys in parallel:
 
 ```{r}
 jsPsychMonkeys::release_the_monkeys(
-  uid = 2:10,
+  uid = 1:10,
   sequential_parallel = "parallel",
   number_of_cores = 10,
   local_folder_tasks = "~/Downloads/protocol999/",
@@ -560,7 +563,7 @@ jsPsychMonkeys::release_the_monkeys(
 - Functions to help create new tasks correction using a standard template
 - Automatic reports with progress, descriptive statistics, code-book, etc.
 - Create a fully reproducible Docker container with the project's data preparation and analysis
-- Create a blinded data frame to be able to perform blinded analyses
+- Create a blinded data frame to perform blinded analyses
 
 
 
@@ -589,8 +592,6 @@ targets::tar_visnetwork(targets_only = TRUE, label = "time")
 
 targets::tar_make()
 ```
-
-
 
 
 ## Challenge: everything in 3 minutes?
@@ -632,18 +633,21 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 
 ```
 
+## {-}
+
+![](img/perfect.png){fig-align="center"}
 
 ## Limitations
 
 - Very easy to create new scales, and simple tasks, but complex experimental tasks <span style="color:orange;">require javascript and HTML knowledge</span> (although there are a good number of examples available)
 
-- Data preparation for <span style="color:grey;">new experimental tasks</span> requires expertise in R (new surveys not so much)  
+- Data preparation for <span style="color:grey;">new experimental tasks</span> requires expertise in R (simple surveys not so much)  
 
 - Analysis reports require some R knowledge (simple templates available)
 
-- Only behavioral tasks (there are Eye tracker plugins... )
-
 - Requires access to a server for online tasks  
+
+- Only behavioral tasks
 
 
 # The future
@@ -656,20 +660,20 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 - Templates for data preparation and analysis of common experimental designs  
 - More tasks, translations, tests, ...  
 - So far, development based in our needs (and possibilities)  
-- Upgrade to jsPsych v8 when available  
+- Upgrade to latest jsPsych when available  
 - Improve, clean, share...  
 - Publish jsPsychR paper  
 
 
-## Help {background-image="img/help.png" background-size="50%" background-position="bottom right"}
+## Help {background-image="img/help.png" background-size="20%" background-position="bottom right"}
 
 - Javascript programmers
 
 - R programmers
 
-- Testers
-
 - Task creators
+
+- Testers
 
 
 ## Back to Registered reports
@@ -717,6 +721,9 @@ Also, check out the future:
 
 - RR v2: [Peer community in](https://peercommunityin.org/)
 
+And our manual:
+
+- [https://gorkang.github.io/jsPsychRmanual/](https://gorkang.github.io/jsPsychRmanual/)
 
 ## References
 
