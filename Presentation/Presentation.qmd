@@ -229,7 +229,7 @@ Each of these has <span style="color:darkgreen;">advantages</span> and <span sty
 Mostly, pragmatic aspects guided the decision: lab history and resources, coding experience, type of experiment (EEG/behavioral, lab/online), ...
 
 
-## Issues {background-image="img/this-is-fine.jpg" background-size="30%" background-position="bottom right"}
+## Issues
 
 - Each protocol started almost from scratch. A single pre-existing task would define the technology used.
 
@@ -293,7 +293,7 @@ Mostly, pragmatic aspects guided the decision: lab history and resources, coding
 
 ## Our wish list
 
-![](img/euphoria.webp){width=40% fig-align="center"}
+![](img/euphoria.png){width=40% fig-align="center"}
 
 ## Our wish list {background-color="white" background-image="img/magic.png" background-size="40%" background-position="bottom right"}
 
