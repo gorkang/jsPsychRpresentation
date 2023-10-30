@@ -1,7 +1,7 @@
 ---
 title: "JsPsychR"
 subtitle: "Open source, standard tooling for experimental protocols: towards Registered reports"
-author: "Gorka Navarrete and Herman Valencia"
+author: "**Gorka Navarrete & Herman Valencia**"
 embed-resources: true
 output-file: "index.html"
 format: revealjs
@@ -18,32 +18,94 @@ bibliography: bibliography.bib
 
 ```
 
+# The past  
+
 ## Running experiments
 
+<BR>
 Old school:  
 
-1) Read a bit
-2) Have an idea
-3) Prepare experiment
-4) Run experiment
-5) Analyze experiment
-6) Write paper
+1) Read a bit & come up with an idea
+2) Prepare and run experiment
+3) Prepare data & explore different analytic approaches
+4) Significant result &#8594; Write paper
 
 
-## Garden of forking paths  {background-image="img/forking-paths.png" background-size="70%"}
+## Some issues {background-image="img/issues-scientific-method-osf.png" background-size="80%" background-position="bottom" .smaller}
 
-@rubin2017evaluation
-
+[https://www.cos.io/initiatives/registered-reports](https://www.cos.io/initiatives/registered-reports)
 
 ## Experimenter degrees of freedom, incentives, issues
 
-- What if... -> Garden of forking paths
+- What if... &#8594; Garden of forking paths [@rubin2017evaluation]
 
-- p-hacking
+- p-hacking, hypothesizing after the results are known (i.e. HARKing)
 
 - The need for significance and novelty
 
 - False positives research 
+
+
+## Psychology Replication crisis
+
+
+:::: {.columns}
+
+
+::: {.column width="55%"}
+
+- Replication of 100 studies 
+- Replication effects were half the magnitude of original effects 
+- __p < 0.05__: 
+  + **97%** of original studies
+  + **36%** of replications
+
+@open2015estimating
+:::
+
+::: {.column width="45%"}
+
+
+![](img/replication-crisis.png)
+:::
+
+::::
+
+
+## Is there a crisis? Why?
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](img/reproducibility-crisis.jpeg)
+@baker2016reproducibility
+
+:::
+
+::: {.column width="60%"}
+
+
+![](img/reproducibility-crisis2.jpeg){width=65%}
+:::
+
+::::
+
+
+##  {background-image="img/help-run.gif"}
+
+
+
+## Improving Replicability
+
+- **Improve methods**: increase n, better measures and manipulations, improve design, piloting
+
+- **Reduce temptations**: p-hacking, hypothesizing after the results are known (i.e. HARKing), selective reporting &#8594; preregistration, internal replications
+
+- **Openness**: transparency of the research process, sharing methods, materials, procedures, and data
+
+@nosek2022replicability
+
 
 ## Registered reports (RR) {background-image="img/unicorn.png" background-size="30%" background-position="bottom right"}
 
@@ -51,21 +113,22 @@ Old school:
 _RRs were conceived to alter the incentives for authors and journals away from producing novel, positive, clean findings and towards conducting and publishing rigorous research on important questions._ @soderberg2021initial
 
 
-## {background-image="img/RR.png" background-size="50%"}
+## RR do help {background-image="img/RR.png" background-size="40%"}
 
 
-## How RR work {background-image="img/RR.webp" background-size="70%" background-position="bottom"}
+## How RR work {background-image="img/RR.webp" background-size="50%" background-position="bottom"}
 
 - Write introduction, method, ... before collecting data!
 - Send to journal for review
 - Revise and resubmit (improve before collecting data)
 - Once you get _In principle acceptance_, collect human data, run analysis, write up, and send for a final review
 
+
 ## RR advantages
 
 - More open, preregistered, reproducible by default  
 
-- It does not matter if p value is < 0.05  
+- It does not matter if p value is < 0.05   
 
 - Less incentives for p-hacking  
 
@@ -77,7 +140,7 @@ _RRs were conceived to alter the incentives for authors and journals away from p
 
 
 
-## Registered reports are great {background-image="img/sold.png" background-size="50%" background-position="bottom"}
+## Registered reports are great {background-image="img/sold.png" background-size="30%" background-position="center"}
 
 
 ## But isn't this a bit...
@@ -91,7 +154,8 @@ _RRs were conceived to alter the incentives for authors and journals away from p
 ::: {.column width="60%"}
 
 - Before having the data available, it is hard to know how to analyze it
-- There are always surprises when receiving new data. How can I create an analysis plan?
+
+- There are always surprises when receiving new data. How can I create an analysis plan that will hold?
 
 :::
 
@@ -163,7 +227,7 @@ Some would work in certain computers, other did not. Output data wildly differen
 
 2 questions voluntary survey:  
 
-![[https://cscn.uai.cl/lab/public/instruments/protocols/38/](https://cscn.uai.cl/lab/public/instruments/protocols/38/){target="_blank"}](img/QR-code.png){width=300, height=300, fig-align="left"}
+![[https://cscn.uai.cl/lab/protocols/38/](https://cscn.uai.cl/lab/protocols/38/){target="_blank"}](img/QR-code.png){width=300, height=300, fig-align="left"}
 
 :::
 
@@ -172,91 +236,122 @@ Some would work in certain computers, other did not. Output data wildly differen
 
 ## Experiment issues 
 
--   Errors in experiments already run
+-   Errors in experiment logic
 -   Errors in items coding
 -   Data not what we expected
--   Data preparation is hard
+-   Data structure makes data preparation hard
 -   Match between hypotheses and data not clear
 -   Variables or questions not used in the analysis/paper
 
-## Resources issues: project as islands
+
+## Resources issues: projects as islands
 
 - Hours wasted re-programming tasks
 - Thousands of € 'invested' in licenses (e.g. Qualtrics)
 - Piloting protocols as a part-time job for Research Assistants
-- Hours wasted re-doing data preparation (each software has its own outout format, each project is an island) 
+- Hours wasted re-doing data preparation (each software has its own output format) 
 
 
 ## Reproducibility issues
 
-- Anyone knows why this 2012 paradigm is not running?
+- Anyone knows why this 2012 paradigm/data analysis is not running?
 - Location and organization of projects 
-- Data preparation/analyses so ugly, sharing them is not something you can do immediately (let me clean up this a bit before sending it...)
-- Idiosincratic analyses, some of which require licensed closed software (SPSS, Matlab,...)
+- Data preparation/analyses so ugly, sharing them is hard (let me clean up this a bit before sharing it with you)
+- Idiosyncratic analyses, some of which require licensed closed software (SPSS, Matlab,...)
 
 
-## Our wish list {background-color="white" background-image="img/magic.png" background-size="50%" background-position="bottom right"}
+## Our wish list {background-image="img/euphoria.webp"  background-size="40%" background-position="bottom"}
+
+
+## Our wish list {background-color="white" background-image="img/magic.png" background-size="40%" background-position="bottom right"}
 
 - Open source software based on standard technologies
-- Based on mature project/technologies
-- Reusable tasks (my project tasks feed future projects)
-- Easy to create paradigms
-- Online/offline
+- Reusable tasks (my project feeds future projects)
+- Based on a mature project or technologies
+- As many 'automagic' things as possible
+- Easy to create and analyze paradigms
 - Balancing participants
-- ...
+- Online/offline
+
 
 
 ## jsPsychR
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
+Open source tools to help create experimental paradigms with [jsPsych](https://www.jspsych.org), simulate participants and standardize the data preparation and analysis  
+<BR>
+
+1\) [jsPsychMaker](https://github.com/gorkang/jsPsychMaker)
+
+2\) [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys)
+
+3\) [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR)
+
+:::
+
+::: {.column width="40%"}
+
 ![](img/jsPsych-trinity.png){fig-align="center"}
+
+:::
+
+::::
+
+
+## Goal
+
+A big catalog of tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker). Each task runs with [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys) to create virtual participants, and have a script in [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR) to automate data preparation (re-coding, reversing items, calculating dimensions, etc.).
+<BR><BR>
+
+The final goal is to help you have the data preparation and analysis ready before collecting any real data, reducing errors in the protocols, and making the move towards registered reports easier.
+
+
+# The present
+
+## So far {.hscroll .scrollable .smaller}
+
+- 3 main R packages (jsPsychMakeR, jsPsychMonkeys, jsPsychHelpeR)
+- 1 R package for Administration tasks (jsPsychAdmin)  
+- \>80 pages [manual](https://gorkang.github.io/jsPsychRmanual/)  
+- ~100 tasks ready (with maker and helper scripts, plus original paper for most)  
+- \> 30 online protocols + an unknown number of offline (lab) protocols  
+- \> 5000 participants in online protocols  
+- Used in Chile, Colombia, Spain  
+- Everything is open source: https://github.com/gorkang/jsPsychRmanual
+- 2 publications using the system (50% Registered reports) + more in the pipeline...  
 
 
 
 ## The team
 
-Initial idea: Gorka
+Current developers: 
 
-Current developers: Gorka Navarrete y Herman Valencia
+- Gorka Navarrete, Herman Valencia
 
-Initial development: \@nicomero, \@Fethrblaka, \@nik0lai
+Initial idea and development: 
+
+- Gorka Navarrete, Nicolas Sanchez-Fuenzalida, Nicolas Alarcón, Alejandro Cofre
 
 Discussions, ideas, testing: 
 
-- Esteban Hurtado
-
-- Alvaro Rivera
-
-- Juan Pablo Morales
+- Esteban Hurtado, Alvaro Rivera, Juan Pablo Morales
 
 
-## What is jsPsychR
-
-<BR><BR>
-jsPsychR is a group of open source tools to help create experimental paradigms with [jsPsych](https://www.jspsych.org), simulate participants and standardize the data preparation and analysis. 
-
-
-## Goal
-
-We aim to have a big catalog of tasks available to use in the [jsPsychMaker](https://github.com/gorkang/jsPsychMaker) repo. Each of the tasks should run with [jspsychMonkeys](https://github.com/gorkang/jsPsychMonkeys) to create virtual participants. And each task will have a sister script in [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR) to fully automate data preparation (re-coding, reversing items, calculating dimensions, etc.).
-
-The final goal is to help you have the data preparation and analysis ready before collecting any real data, drastically reducing errors in your protocols, and making the move towards registered reports easier.
-
-
-
-
-## jsPsychR Tools
+## jsPsychR tools
 
 :::: {.columns}
 
 ::: {.column width="40%"}
 
-<BR><BR>  
+<BR><BR>
+1\) **[jsPsychMaker](https://github.com/gorkang/jsPsychMaker)**
 
--   [jsPsychMaker](https://github.com/gorkang/jsPsychMaker)
+2\) <span style="color:grey;">jsPsychMonkeys</span>
 
--   [jspsychMonkeys](https://github.com/gorkang/jsPsychMonkeys)
-
--   [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR)
+3\) <span style="color:grey;">jsPsychHelpeR</span>
 
 :::
 
@@ -267,18 +362,6 @@ The final goal is to help you have the data preparation and analysis ready befor
 :::
 
 ::::
-
-
-## The present {.hscroll .scrollable .smaller}
-
-- 3 main R packages (jsPsychMakeR, jsPsychMonkeys, jsPsychHelpeR)
-- 1 R package for Administration tasks (jsPsychAdmin)  
-- \>80 pages [manual](https://gorkang.github.io/jsPsychRmanual/jsPsychR-manual.pdf)  
-- ~100 tasks ready (with maker and helper scripts, plus original paper)  
-- \> 30 online protocols + an unknown number of offline (lab) protocols  
-- \> 5000 participants in online protocols  
-- Used in Chile, Colombia, Spain  
-- 2 publications using the system + more in the pipeline...  (50% Registered reports)
 
 
 ## jsPsychMaker
@@ -296,7 +379,7 @@ The final goal is to help you have the data preparation and analysis ready befor
 - Participants can continue where they left (or not)
 - Time and number of participants limits
 - Multilingual support (for a selected number of tasks)
-- All the parameters can be quickly change editing a single file
+- All the parameters can be quickly changed editing a single file
 
 
 ## Available tasks {.hscroll .scrollable .smaller}
@@ -306,24 +389,28 @@ The final goal is to help you have the data preparation and analysis ready befor
 #| echo: false
 #| code-fold: false
 
-# googlesheets4::gs4_auth("gorkang@gmail.com")
-# 
-# DF_raw = googlesheets4::read_sheet("1Eo0F4GcmqWZ1cghTpQlA4aHsc8kTABss-HAeimE2IqA", sheet = 2, skip = 0) |>
-#     dplyr::rename(short_name = `Codigo Test`) |>
-#     dplyr::filter(!grepl("short_name", short_name)) |>
-#     dplyr::arrange(short_name) |>
-#     dplyr::select(short_name, Nombre, Descripcion) |>
-#     tidyr::drop_na(short_name)
-# 
-# DF_raw_NEW = googlesheets4::read_sheet("1LAsyTZ2ZRP_xLiUBkqmawwnKWgy8OCwq4mmWrrc_rpQ", sheet = 2, skip = 0)
-# 
-# 
-# DT::datatable(DF_raw, filter = 'top', options = list(pageLength = 100, dom = 't'), rownames = FALSE) |> 
-#     DT::formatStyle(columns = c(1, 2, 3), fontSize = '75%')
+googlesheets4::gs4_auth("gorkang@gmail.com")
+
+DF_raw = googlesheets4::read_sheet("1Eo0F4GcmqWZ1cghTpQlA4aHsc8kTABss-HAeimE2IqA", sheet = 2, skip = 0) |>
+    dplyr::rename(short_name = `Codigo Test`) |>
+    dplyr::filter(!grepl("short_name", short_name)) |>
+    dplyr::arrange(short_name) |>
+    dplyr::select(short_name, Nombre, Descripcion) |>
+    tidyr::drop_na(short_name)
+
+DF_raw_NEW = googlesheets4::read_sheet("1LAsyTZ2ZRP_xLiUBkqmawwnKWgy8OCwq4mmWrrc_rpQ", sheet = 2, skip = 0)
+
+
+DT::datatable(DF_raw, filter = 'top', options = list(pageLength = 100, dom = 't'), rownames = FALSE) |>
+    DT::formatStyle(columns = c(1, 2, 3), fontSize = '75%')
 
 ```
 
 ## Create New Tasks
+
+Creating new tasks is as simple as: 
+
+1) Copy example tasks to your computer
 
 ```{r}
 
@@ -333,9 +420,17 @@ jsPsychMaker::copy_example_tasks(
 
 ```
 
+2) Copy paste items, adapt csv/excel file
+
+3) Create protocol (see next slide)
+
+
+
+
+
 ## Create protocol
 
-Create a protocol with three existing tasks:
+Create a protocol with three existing tasks plus the adapted Example tasks:
 
 ```{r}
 jsPsychMaker::create_protocol(
@@ -346,9 +441,42 @@ jsPsychMaker::create_protocol(
 )
 ```
 
+
+## jsPsychR tools
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+<BR><BR>
+1\) <span style="color:grey;">jsPsychMaker</span>
+
+2\) **[jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys)**
+
+3\) <span style="color:grey;">jsPsychHelpeR</span>
+
+:::
+
+::: {.column width="60%"}
+
+![](img/jsPsych-trinity.png){fig-align="center"}
+
+:::
+
+::::
+
+
 ## jsPsychMonkeys
 
+::: {layout="[20,-2,5]" layout-valign="bottom"}
+
 ![](img/jsMonkeys_parallel.gif)
+
+![](img/jsPsychMonkeys.png){fig-align="center" layout-valign="bottom"}
+
+
+::::
+
 
 
 ## Features jsPsychMonkeys
@@ -359,13 +487,13 @@ jsPsychMaker::create_protocol(
 - Get pictures of each screen
 - Store logs to make debugging easier
 - Watch the monkeys as they work for you
-- Random pauses or refreshing to simulare human behavior
+- Random pauses or refreshing to simulate human behavior
 - Set random seed to make the monkey's behavior consistent
 
 
 ## Release monkeys
 
-Release a single Monkey!:
+Release a single Monkey and take a look:
 
 ```{r}
 
@@ -378,7 +506,7 @@ jsPsychMonkeys::release_the_monkeys(
 )
 ```
 
-Release a horde of Monkeys in parallel:
+Release 10 Monkeys in parallel:
 
 ```{r}
 jsPsychMonkeys::release_the_monkeys(
@@ -390,23 +518,49 @@ jsPsychMonkeys::release_the_monkeys(
 )
 ```
 
+
+## jsPsychR tools
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+<BR><BR>
+1\) <span style="color:grey;">jsPsychMaker</span>
+
+2\) <span style="color:grey;">jsPsychMonkeys</span>
+
+3\) **[jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR)**
+
+:::
+
+::: {.column width="60%"}
+
+![](img/jsPsych-trinity.png){fig-align="center"}
+
+:::
+
+::::
+
+
+
+
 ## jsPsychHelpeR
 
 ![](img/jsPsychHelpeR.png)
 
 
-
-
-
 ## Features jsPsychHelpeR {.hscroll .scrollable .smaller}
 
 - Fully open source (R)
-- Get tidy output dataframes for each task, and for the whole protocol
+- Get tidy output data frames for each task, and for the whole protocol
+- Standard naming for tasks, dimensions, scales, ...
 - Include tests for common issues
+- Snapshots to detect changes in data processing
 - Functions to help create new tasks correction using a standard template
-- Automatic reports with progress, descriptives, codebook, etc.
-- Create a fully reproducible Docker container with the project’s data preparation and analysis
-- Create a blinded dataframe to be able to perform blinded analyses
+- Automatic reports with progress, descriptive statistics, code-book, etc.
+- Create a fully reproducible Docker container with the project's data preparation and analysis
+- Create a blinded data frame to be able to perform blinded analyses
 
 
 
@@ -422,12 +576,16 @@ jsPsychHelpeR::run_initial_setup(
   )
 ```
 
+Create a task correction script:  
+
 ```{r}
 jsPsychHelpeR::create_new_task("MultiChoice")
 ```
 
+Visualize and run data preparation:  
+
 ```{r}
-  targets::tar_visnetwork(targets_only = TRUE, label = "time")
+targets::tar_visnetwork(targets_only = TRUE, label = "time")
 
 targets::tar_make()
 ```
@@ -447,21 +605,30 @@ rstudioapi::navigateToFile("R/script-full-process.R")
 ```
 <BR>
 
-<!-- {{< video https://www.youtube.com/watch?v=2OXI9lzE3zU width="600" height="400" >}} -->
+{{< video https://www.youtube.com/watch?v=2OXI9lzE3zU width="600" height="400" >}}
 
+
+## Survey Experiment Issues {background-image="img/survey-issues.png" background-size="50%" background-position="bottom"}
 
 ## Survey results
 
 Let's try to download the data, process it and show a report with the results:  
 
 <BR>
+Plan A: run Experiment Issues project
+
 ```{r, eval=FALSE}
 
-# Open ExperimentIssues project
-rstudioapi::openProject("../Survey/jsPsychHelpeR-ExperimentIssues/jsPsychHelpeR-ExperimentIssues.Rproj", newSession = TRUE)
+rstudioapi::openProject("../jsPsychHelpeR-ExperimentIssues/jsPsychHelpeR-ExperimentIssues.Rproj", newSession = TRUE)
 
-# If something fails, we always have the monkeys!
-browseURL("../Survey/jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_monkeys.html")
+```
+
+<BR><BR>
+Plan B: If something fails, we always have the monkeys!
+
+```{r, eval=FALSE}
+
+browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_monkeys.html")
 
 ```
 
@@ -470,42 +637,28 @@ browseURL("../Survey/jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analy
 
 - Very easy to create new scales, and simple tasks, but complex experimental tasks <span style="color:orange;">require javascript and HTML knowledge</span> (although there are a good number of examples available)
 
-- Data preparation for <span style="color:grey;">new tasks</span> requires expertise in R  
+- Data preparation for <span style="color:grey;">new experimental tasks</span> requires expertise in R (new surveys not so much)  
+
+- Analysis reports require some R knowledge (simple templates available)
+
+- Only behavioral tasks (there are Eye tracker plugins... )
 
 - Requires access to a server for online tasks  
 
 
+# The future
 
 ## {background-color="black" background-image="img/future.jpg"}
 
-## The future {background-image="img/working.gif"  background-size="20%" background-position="bottom right"}
+## Too many things, too little time {background-image="img/working.gif"  background-size="20%" background-position="bottom right"}
 
-- **Lots** of things to do: 
-
-- Experimental tasks
-  + Create templates for most common experimental designs
-  + Templates for data preparation of common experimental designs
-
-- More tasks, more translations
-- So far, development based in our needs
-- Upgrade to jsPsych v8 when available
-- Improve, clean, ...
-
-
-## So back to Registered reports
-
-- With jsPsychR protocols are standardized and with (mostly) clean code. Also, less errors!
-
-- Data preparation is 90% automatic, standardized, and beautiful
-
-- Super easy to work on analyis <span style="color:darkgreen;">before</span> collecting human data
-
-- Much easier to write up a good analysis plan
-
-- Sharing protocol, materials, data preparation is trivial (single command)
-
-- Creating future proof full projects (with Docker) is one command away
-
+- Create templates for most common experimental designs  
+- Templates for data preparation and analysis of common experimental designs  
+- More tasks, translations, tests, ...  
+- So far, development based in our needs (and possibilities)  
+- Upgrade to jsPsych v8 when available  
+- Improve, clean, share...  
+- Publish jsPsychR paper  
 
 
 ## Help {background-image="img/help.png" background-size="50%" background-position="bottom right"}
@@ -517,6 +670,52 @@ browseURL("../Survey/jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analy
 - Testers
 
 - Task creators
+
+
+## Back to Registered reports
+
+<BR><BR><BR>
+![](img/RR.webp)
+
+## Can jsPsych really help? (1/2)
+
+- With jsPsychR, protocols are standardized and with (mostly) clean code 
+
+  + Less errors in protocols
+
+- Data preparation is 90% automatic, standardized, and beautiful 
+
+  + Less errors in data preparation
+
+- When errors are found and fixed, **old** protocols can benefit from the corrections, old results can be checked, ...
+
+
+## Can jsPsych really help? (2/2)
+
+- Super easy to work on analysis <span style="color:darkgreen;">before</span> collecting human data
+
+- Much easier to write up a good analysis plan, share it, improve it, ...
+
+- Sharing protocol, materials, data preparation is trivial (single command)
+
+- Creating future proof full reproducible projects (with Docker) is one command away
+
+
+
+## RR + jsPsychR
+
+![](img/reproducibility-crisis2_solved.jpeg){width=65% fig-align="center"}
+
+## More information
+
+For more information about RR, templates, checklists, list of participating journals (\>300), etc.:  
+
+- [https://www.cos.io/initiatives/registered-reports](https://www.cos.io/initiatives/registered-reports)
+
+
+Also, check out the future:  
+
+- RR v2: [Peer community in](https://peercommunityin.org/)
 
 
 ## References
