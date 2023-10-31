@@ -3,8 +3,13 @@ title: "JsPsychR"
 subtitle: "Open source, standard tooling for experimental protocols: towards Registered reports"
 author: "**Gorka Navarrete & Herman Valencia**"
 embed-resources: true
+slide-number: c
 output-file: "index.html"
-format: revealjs
+format: 
+  revealjs:
+    theme: 
+      - default
+      - custom.scss
 editor: source
 echo: true
 eval: false
@@ -12,45 +17,75 @@ code-fold: false
 code-summary: "show code"
 css: hscroll.css
 bibliography: bibliography.bib
+
 ---
 
 ```{r setup}
 
 ```
 
-# The past  
-
-## Running experiments
-
-<BR>
-Old school:  
-
-1) Read a bit & come up with an idea
-2) Prepare and run experiment
-3) Prepare data & explore different analytic approaches
-4) Significant result &#8594; Write paper
+# The past
+_Gather 'round little ones_
 
 
-## Some issues {background-image="img/issues-scientific-method-osf.png" background-size="60%" background-position="bottom" .smaller}
+## Old school science
 
-[https://www.cos.io/initiatives/registered-reports](https://www.cos.io/initiatives/registered-reports)
+::: {layout="[-10, 10]" layout-valign="bottom"}
+
+![](img/shiny-logo.png){width=100% fig-align="right"}
+:::
+
+
+## Old school science
+
+<BR> 
+
+1) Read literature & come up with a _shiny_ idea
+2) Design and run experiment
+3) Prepare data & **explore different analytic approaches**
+4) If significant result &#8594; Write paper
+
+
+## Scientific method
+
+::: {layout="[10]" layout-valign="bottom"}
+![[Source: Center for Open Science |MODIFIED|](https://www.cos.io/initiatives/registered-reports)](img/issues-scientific-method-osf_clean.png){width=80% fig-align="center" text-align="center" layout-valign="bottom"}
+:::
+
+
+## Some issues
+
+::: {layout="[10]" layout-valign="bottom"}
+![[Source: Center for Open Science](https://www.cos.io/initiatives/registered-reports)](img/issues-scientific-method-osf.png){width=80% fig-align="center" text-align="center" layout-valign="bottom"}
+:::
 
 ## Experimenter degrees of freedom, incentives, issues
 
-- What if... &#8594; Garden of forking paths [@rubin2017evaluation]
-
-- p-hacking, hypothesizing after the results are known (i.e. HARKing)
-
 - The need for significance and novelty
 
-- False positives research 
+- Garden of forking paths [@rubin2017evaluation]
+
+- p-hacking [@bruns2016p]
+
+- Hypothesizing after the results are known (i.e. HARKing) [@kerr1998harking]
+
+- False-positive research [@forstmeier2017detecting]
+
+- Salami slicing [@rogers1999salami]
+
+
+## Context
+
+Mean number of publications for new hires in the Canadian cognitive psychology job market
+
+::: {layout="[10]" layout-valign="bottom"}
+![@pennycook2018analysis](img/job-market.png){width=80% fig-align="center" text-align="center"}
+:::
 
 
 ## Psychology Replication crisis
 
-
 :::: {.columns}
-
 
 ::: {.column width="55%"}
 
@@ -60,13 +95,12 @@ Old school:
   + **97%** of original studies
   + **36%** of replications
 
-@open2015estimating
 :::
 
 ::: {.column width="45%"}
 
+![@open2015estimating](img/replication-crisis.png){}
 
-![](img/replication-crisis.png)
 :::
 
 ::::
@@ -78,8 +112,7 @@ Old school:
 
 ::: {.column width="40%"}
 
-![](img/reproducibility-crisis.jpeg)
-@baker2016reproducibility
+![@baker2016reproducibility](img/reproducibility-crisis.jpeg)
 
 :::
 
@@ -95,8 +128,11 @@ Old school:
 ## {background-image="img/help-run.gif"}
 
 
+# ~~Issues~~ Opportunities
+
 
 ## Improving Replicability
+
 
 - **Improve methods**: increase n, better measures and manipulations, improve design, piloting
 
@@ -121,16 +157,15 @@ _RRs were conceived to alter the incentives for authors and journals away from p
 ::: {.column width="60%"}
 
 
-RRs outperformed comparison papers on all 19 criteria [@soderberg2021initial]
+RRs **outperformed comparison papers on all 19 criteria** [@soderberg2021initial]
 
 Sizable improvements in:
 
-- rigour of methodology and analysis  and overall paper quality 
+- rigor of methodology and analysis, and overall paper quality 
 
 Statistically indistinguishable in:
 
 - novelty and creativity
-
 
 _RRs could improve research quality while reducing publication bias..._
 
@@ -138,19 +173,19 @@ _RRs could improve research quality while reducing publication bias..._
 
 ::: {.column width="40%"}
 
-
-<!-- ![](img/RRs.png){width=300, height=300, fig-align="right"} -->
 :::
 
 ::::
 
 
-## How RRs work {background-image="img/RRs.webp" background-size="50%" background-position="bottom"}
+## How RRs work {background-image="img/RRs.webp" background-size="40%" background-position="bottom"}
 
 - Write introduction, method, ... before collecting data!
 - Send to journal for review
 - Revise and resubmit (improve before collecting data)
-- Once you get _In principle acceptance_, collect human data, run analysis, write up, and send for a final review
+- Once you get _In principle acceptance_:
+  + collect data & run planned analysis
+  + report results and conclusions & send for final review
 
 
 ## RRs advantages
@@ -159,9 +194,11 @@ _RRs could improve research quality while reducing publication bias..._
 
 - It does not matter if p value is < 0.05   
 
-- Less incentives for p-hacking  
+- Less incentives for p-hacking
 
-- More trustworthy results  
+- No hypothesizing after the results are known (HARKing)
+
+- More trustworthy results
 
 ::: {.fragment .highlight-red}
 - You still can explore, but have to say explicitly
@@ -172,72 +209,81 @@ _RRs could improve research quality while reducing publication bias..._
 ## Registered reports are great {background-image="img/sold.png" background-size="30%" background-position="center"}
 
 
-## But isn't this a bit...
+## But isn't this a bit... hard?
 
-
-<BR><BR>
 
 :::: {.columns}
 
+::: {.column width="65%"}
 
-::: {.column width="60%"}
-
-- Before having the data available, it is hard to know how to analyze it
+- It is hard to know how to analyze an experiment before having the data in front of me
 
 - There are always surprises when receiving new data. How can I create an analysis plan that will hold?
 
-:::
-
-::: {.column width="40%"}
-
-
-![](img/upside-down.png){width=300, height=300, fig-align="right"}
-:::
-
-::::
-
-
-## Our path towards RRs
-
-
-<BR><BR>
-
-:::: {.columns}
-
-
-::: {.column width="30%"}
+- Collecting ALL-THE-THINGS&#8482;, allows me to figure out the best way to analyze the data afterwards
 
 :::
 
-::: {.column width="70%"}
+::: {.column width="35%"}
 
 
-![](img/Logo-CSCN.png){width=500}
+![](img/upside-down.png){fig-align="right"}
 :::
 
 ::::
 
+
+# Our path towards RRs {background-image="img/Logo-CSCN.png" background-size="30%" background-position="bottom right"}
 
 
 ## Background
 
-We ([CSCN](https://cscn.uai.cl/); ~5-10 PI's) used different technologies to develop experiments: Psychopy, Qualtrics, Limesurvey, jsPsych, etc.  
-<BR>
+- In the [CSCN](https://cscn.uai.cl/) (~5-10 PI's) we used different technologies for experiments: Psychopy, Qualtrics, Limesurvey, jsPsych,...  
 
-Each of these has <span style="color:darkgreen;">advantages</span> and <span style="color:orange;">disadvantages.</span>  <BR><BR>
+- Each protocol started almost from scratch. A single pre-existing task would define the technology used
 
-Mostly, pragmatic aspects guided the decision: lab history and resources, coding experience, type of experiment (EEG/behavioral, lab/online), ...
+- Multiple implementations of the same tasks, not always exact replicas, not always easy to find
+
+- Some would work in certain computers, other did not
+
+- Output data wildly different, data preparation a hard task and error prone
 
 
 ## Issues
 
-- Each protocol started almost from scratch. A single pre-existing task would define the technology used.
+<BR><BR>  
 
-- Multiple implementations of the same tasks in different technologies, not always exact replicas, not always easy to find.
+- Experiments
+- Resources
+- Reproducibility
 
-- Some would work in certain computers, other did not.
 
-- Output data wildly different, data preparation a hard task and error prone.
+
+## Experiment issues 
+
+-   Errors in experiment logic
+-   Errors in items coding
+-   Data not what we expected
+-   Data structure made data preparation hard
+-   Match between hypotheses and data not clear
+-   Variables or questions not used in the analysis/paper
+
+
+## Resources issues: projects as islands
+
+- Hours, days, weeks, wasted re-programming tasks
+- Thousands of € 'invested' in licenses (e.g. Qualtrics)
+- Piloting protocols as a part-time job for Research Assistants
+- Hours, days, weeks, wasted re-doing data preparation (each software has its own output format) 
+
+
+## Reproducibility issues
+
+- Anyone knows why this 2012 paradigm/data analysis is not running?
+- Location and organization of projects 
+- Data preparation/analyses so ugly, sharing them is hard (let me clean up this a bit before sharing it with you)
+- Idiosyncratic analyses, some of which require licensed closed software (SPSS, Matlab,...)
+
 
 
 ## Issues Survey
@@ -245,12 +291,6 @@ Mostly, pragmatic aspects guided the decision: lab history and resources, coding
 :::: {.columns}
 
 ::: {.column width="30%"}
-
-<BR><BR>  
-
-- Experiments
-- Resources
-- Reproducibility
 
 :::
 
@@ -263,33 +303,6 @@ Mostly, pragmatic aspects guided the decision: lab history and resources, coding
 :::
 
 ::::
-
-
-## Experiment issues 
-
--   Errors in experiment logic
--   Errors in items coding
--   Data not what we expected
--   Data structure makes data preparation hard
--   Match between hypotheses and data not clear
--   Variables or questions not used in the analysis/paper
-
-
-## Resources issues: projects as islands
-
-- Hours wasted re-programming tasks
-- Thousands of € 'invested' in licenses (e.g. Qualtrics)
-- Piloting protocols as a part-time job for Research Assistants
-- Hours wasted re-doing data preparation (each software has its own output format) 
-
-
-## Reproducibility issues
-
-- Anyone knows why this 2012 paradigm/data analysis is not running?
-- Location and organization of projects 
-- Data preparation/analyses so ugly, sharing them is hard (let me clean up this a bit before sharing it with you)
-- Idiosyncratic analyses, some of which require licensed closed software (SPSS, Matlab,...)
-
 
 ## Our wish list
 
@@ -309,6 +322,7 @@ Mostly, pragmatic aspects guided the decision: lab history and resources, coding
 
 # The present
 
+A few years latter...
 
 
 ## jsPsychR
@@ -423,17 +437,7 @@ Discussions, ideas, testing:
 #| echo: false
 #| code-fold: false
 
-googlesheets4::gs4_auth("gorkang@gmail.com")
-
-DF_raw = googlesheets4::read_sheet("1Eo0F4GcmqWZ1cghTpQlA4aHsc8kTABss-HAeimE2IqA", sheet = 2, skip = 0) |>
-    dplyr::rename(short_name = `Codigo Test`) |>
-    dplyr::filter(!grepl("short_name", short_name)) |>
-    dplyr::arrange(short_name) |>
-    dplyr::select(short_name, Nombre, Descripcion) |>
-    tidyr::drop_na(short_name)
-
-DF_raw_NEW = googlesheets4::read_sheet("1LAsyTZ2ZRP_xLiUBkqmawwnKWgy8OCwq4mmWrrc_rpQ", sheet = 2, skip = 0)
-
+DF_raw = readr::read_csv(here::here("Presentation/data/DF_tasks.csv"))
 
 DT::datatable(DF_raw, filter = 'top', options = list(pageLength = 100, dom = 't'), rownames = FALSE) |>
     DT::formatStyle(columns = c(1, 2, 3), fontSize = '75%')
@@ -635,7 +639,8 @@ Create protocol, simulate participants and prepare data...
 rstudioapi::navigateToFile("R/script-full-process.R")
 
 ```
-<BR>
+
+[Create, simulate, prepare](https://www.youtube.com/watch?v=2OXI9lzE3zU){target="_blank"}
 
 {{< video https://www.youtube.com/watch?v=2OXI9lzE3zU width="600" height="400" >}}
 
@@ -684,6 +689,8 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 
 
 # The future
+
+ _The past is always tense, the future perfect._ Zadie Smith
 
 ## {background-color="black" background-image="img/future.jpg"}
 
@@ -745,6 +752,32 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 
 ![](img/reproducibility-crisis2_solved.jpeg){width=65% fig-align="center"}
 
+
+
+## Improving Peer Review
+
+<BR>
+
+:::: {.columns}
+
+::: {.column width="55%"}
+
+- Data should be made publicly available
+
+- Stimuli and materials should be made publicly available
+
+- The location of all of these files should be advertised in the manuscript, ...
+
+:::
+
+::: {.column width="45%"}
+
+![Source: [https://www.opennessinitiative.org/](https://www.opennessinitiative.org/)](img/PRO.png){width=80% fig-align="center" text-align="center" layout-valign="bottom"}
+
+
+:::
+
+::::
 ## More information
 
 For more information about RRs, templates, checklists, list of participating journals (\>300), etc.:  
