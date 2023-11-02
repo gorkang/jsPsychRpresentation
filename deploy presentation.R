@@ -1,6 +1,9 @@
+# REMEMBER TO CHANGE page number in custom.scss
+
 file.copy(from = "Presentation/index.html", 
           to = "docs/index.html", 
           overwrite = TRUE)
+
 
 
 
