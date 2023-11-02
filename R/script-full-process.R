@@ -28,4 +28,5 @@ jsPsychMonkeys::release_the_monkeys(
 jsPsychHelpeR::run_initial_setup(
   pid = 999, 
   data_location = "~/Downloads/protocol999/.data", 
-  folder = "~/Downloads/jsPsychHelpeR999")
+  folder = "~/Downloads/jsPsychHelpeR999", 
+  dont_ask = TRUE)

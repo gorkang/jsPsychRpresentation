@@ -1,0 +1,83 @@
+short_name,Nombre,Descripcion
+AIM,Grupos Socieeconómicos,Modelo que permite segmentar y clasificar socioeconómicamente a los individuos.
+BART,Balloon Analogue Risk Task,Medida de riesgo individual mediante el análisis de las condultas del individuo
+BNT,Berlin Numeracy test,"Breve, flexible y de fácil aplicación. Mide habilidades numéricas"
+Bank,Detalles bancarios,Detalles bancarios para realizar transferencia a participante por su participación en experimento
+CAS,COVID-19 anxiety scale,Evalúa las fluctuaciones en los niveles de ansiedad causados ​​​​por COVID-19
+CEL,Cuestionario Estilos de Liderazgo,"Mide los estilos de liderazgo según tres criterios: Directivo, Democratico y Derivativo"
+CIT,Test de inferencia contrafactual,Prueba de selección múltiple que evalúa inferencia contrafactual.
+COVIDCONTROL,Covid related Questions,Busca conocer los cambios que han ocurrido en la vida del entrevistado desde la aparición del COVID-19.
+CRS,The Centrality of Religiosity Scale,Mide la intensidad general de cinco dimensiones básicas de la religiosidad.
+CRT7,Cognitive reflection test,Mide la tendencia a anular una alternativa de respuesta prepotente que es incorrecta y participar en una reflexión adicional que conduce a la respuesta correcta.
+CRTMCQ4,Cognitive reflection test - 4 alternatives,Mide la tendencia a anular una alternativa de respuesta prepotente que es incorrecta y participar en una reflexión adicional que conduce a la respuesta correcta.
+CRTv,Verbal Cognitive Reflection Test,Mide la capacidad de suprimir una intuición inicial (incorrecta) y reflexionar cognitivamente.
+CS,Escala de Compasión,Mide la Compasión hacia otros
+Consent,Consentimiento Informado de Participación,Consentimiento informado estandard
+ConsentHTML,Consentimiento Informado de Participación,Consentimiento informado estandard
+Cov19Q,Cuestionario Covid 19,Evalúa dimensiones relacionadas al covid-19
+DASS21,Escalas de depresión ansiedad y estrés,"Mide escala de ansiedad, estrés y depresión (autoinforme)"
+DEBRIEF,Debrief at end of experiment,Informe presentado al final del experimento
+DEMOGR,Demographic scale,Ejemplo de tarea donde se recoje información demográfica del encuestado
+EAR,Escala de Autoestima de Rosenberg,Instrumento unidimensional que mide la autoestima.
+ERQ,Emotion Regulation Questionnaire,Evalua dos estrategias de regulación emocional (autoinforme)
+ESM,Escala Subjetiva de Memoria,Evalúa la memoria del paciente directamente con él/ella
+ESV,Empathy Stimulus Validation,Evalúa la interacción entre 2 individuos (uno con Alzeimer)
+ESZ,Escala abreviada de Sobrecarga del Cuidador de Zarit,Mide la sobrecarga de los cuidadores de personas con Demencia (Autoinforme)
+EmpaTom,"Empatia, Teoria de la mente y Compasión",Tarea de video social que permite la manipulación y evaluación independiente de la empatía y compasión
+GBS,Global Beliefs Screening,Evalúa las creencias del entrevistado
+GHQ12,12-item General health questionnaire,Detecta personas con trastorno psiquiátrico diagnosticable
+Goodbye,Goodbye task,Despedida del experimento. Entrega el código aleatorio de participación
+HRPVB,High risk perception of vaginal birth,Preguntas para evaluar el nivel de riesgo percibido antes de ver la información de la prueba INFCONS
+HRPVBpost,High risk perception of vaginal birth (POST),Preguntas para evaluar el nivel de riesgo percibido después de ver la información de la prueba INFCONS
+IBT,Impulsive buying Tendency,Mide impulsividad de compra
+ICvsID,Impartial Charity vs. Instrumental Damage,"Evalua las actitudes de las personas hacia el daño instrumental, es decir, el sacrificio de un individuo para salvar a un número mayor."
+IDQ,Cuestionario de Identificación,Cuestionario que permite identificar a los individuos y además contiene preguntas sobre diagnósticos psiquiatricos.
+IEC,Rotters internal-External control scale,Mide el grado en que las personas creen que ejercen control sobre sus vidas (controladas internamente) o el grado a los que sienten que sus destinos están más allá de su propio control y están determinados por el destino (controladas externamente)
+INFCONS,Cesarean information brochures,Entrega información sobre las cesáreas (consentimiento informado)
+IRI,Interpersonal reactivity index,Es una medida de empatía de diferencia individual con un enfoque multidimensional. (Medida de autoinforme)
+IRS,Importance of Rationality Scale,Mide la importancia personal (no verbal) que los individuos asignan a la formación y evaluación de la creencia sobre bases racionales
+MDDF,MORAL DISGUST DUMBFOUNDING,"Evalua el juicio moral, la toma de perspectiva y la valoración de daño percibido en cuatro tipos de casos:de un dilema con fuerte controversia moral (moral dumbfounding), dilemas morales sin fuerte controversia moral, situaciones no morales y situaciones control."
+MDMQ,Melbourne Decision Making Questionnaire,Mide patrones de afrontamiento de decisiones
+MIS,Magical ideation scale,Mide el nivel de pensamiento mágico del individuo
+OBJNUM,Lipkus numeracy Test,Mide el rendimiento en preguntas de resolución numérica
+OTRASRELIG,Varias preguntas sobre creencias religiosas,Escala con multiples preguntas sobre religión. Creada a partir de preguntas propias y multiples escalas.
+PBSr,Paranormal Belief Scale,Proporciona una medida del grado de creencia en siete dimensiones
+PERMA,Perma Profiler,Medida de prosperidad o bienestar
+PRFBM,Preferencia of birth mode in normal pregnancy,NA
+PRFBMpost,Preferencia of birth mode in normal pregnancy (post),NA
+PSC,Prosociality,"Variación del juego de la donación caritativa donde la persona decide, en el caso de una ganancia ocasional, cuanto dinero se queda y cuanto reparte a una entidad social que apoya a personas de su propio país (in-group) y cuanto a una entidad social que apoya a personas de otras partes del mundo (out-group)."
+PSETPP,"Percepciones sobre el embarazo, trabajo de parto y parto (Fear of birth scale)","Evalúa las actitudes y sentimientos del individuo hacia el embarazo, trabajo de parto y parto."
+PSPPC,Percepciones sobre el parto por cesárea,NA
+PSS,Perceived Stress Scale,Mide el grado en que las situaciones en la vida de uno son valoradas como estresantes.
+PVC,Preguntas vacuna COVID-19,Entrega información respecto al estado de vacunación contra covid19
+PWb,Psychological well being-scale,Mide el bienestar psicológico
+REI40,Rational-Experiential intentory-40,Mide las diferencias individuales de dos dimensiones independientes del procesamiento humano: racional y experiencial.
+RTS,The Revised Transliminality Scale,Mide el nivel de transliminalidad del entrevistado.
+Report,Tarea para solicitar autorización y detalles para enviar reporte automatizado con resultados de participantes,La tarea Report solicita autorización y detalles para enviar reporte automatizado. Existe un archivo Rmd en jsPsychHelpeR que trabaja con el input de esta tarea para generar reportes automatizados para los participantes.
+SASS,Social Adaptation Self-evaluation Scale,Estudia la motivación y el comportamiento del paciente en distintas áreas
+SBS,Supernatural Belief Scale,"Evalua la medida de la creencia en agentes religiosos sobrenaturales, lugares y eventos."
+SCSORF,Santa Clara Strength of Religious Faith Questionnaire,Evalúa la fuerza de la fe religiosa.
+SDG,Socio Demográfico General,Recolecta información demográfica del individio
+SILS,School Implementation Leadership Scale,Evalúa estilos de liderazgo en el contexto educacional (directivos y profesores de institiuciones educacionales).
+SRA,Self-Reported Altruism Scale,Mide el altruismo del individuo
+SRBQP,Self-regulation and belief questionnaire in pandemic,NA
+SRSav,Springfield Religiosity Scale (Abbreviated Version),Refleja una perspectiva judeocristiana conservadora o tradicional
+STAI,State-Trait Anxiety Inventory,"Entrega una medida empírica del nivel de ansiedad “normal” en adultos, mediante la medición de 2 conceptos independientes."
+SWBQ,Spiritual wellbeing questionnaire,"Mide el bienestar personal, bienestar comunitario, bienestar ambiental y bienestar trascendental."
+WEBEXEC,Web based executive funtion questionnaire,Refleja la experiencia general de los participantes sobre los problemas ejecutivos en lugar de cualquier aspecto específico de los mismos.
+bRCOPE,Escala de afrontamiento religioso Brief-RCOPE,Evalúa dos patrones de afrontamiento religioso en población adolescente y adulta
+sProQOL,Short Professional Quality of Life Scale,Mide la Calidad de vida de trabajadores de la salud
+AntiBots,NA,NA
+BDI,Beck depression inventory,Medida de frecuencua y gravedad de sintomatologia depresiva
+BRS,The Brief Resilience Scale,Escala de resiliencia
+CMApost,Cognitive and memory assessment (post),NA
+CMApre,Cognitive and memory assessment (pre),NA
+EQ,Coeficiente de Empatía,NA
+FKEA,"Financial knowledge, experience and attitudes",Evalúa el conocimiento financiero del encuestado
+LoB,Last of Beliefs,Evalua el tiempo de duración de creencia en Dios
+MCQ30,NA,NA
+NARS,Negative Attitudes towards Robots Scale,NA
+PPD,Probabilistic Prototype Distortion task,NA
+RMET,Reading the mind in the eyes test,NA
+RobToM,NA,NA
+fauxPasEv,Faux Pas,Evalua la teoría de la mente

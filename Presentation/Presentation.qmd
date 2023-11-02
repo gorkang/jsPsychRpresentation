@@ -15,7 +15,7 @@ echo: true
 eval: false
 code-fold: false
 code-summary: "show code"
-css: hscroll.css
+css: custom.css
 bibliography: bibliography.bib
 
 ---
@@ -40,7 +40,7 @@ _Gather 'round little ones_
 
 <BR> 
 
-1) Read literature & come up with a _shiny_ idea
+1) Read literature & come up with a _shiny_^[Novel, counter-intuitive, interesting,...] idea
 2) Design and run experiment
 3) Prepare data & **explore different analytic approaches**
 4) If significant result &#8594; Write paper
@@ -61,7 +61,7 @@ _Gather 'round little ones_
 
 ## Experimenter degrees of freedom, incentives, issues
 
-- The need for significance and novelty
+The need for significance and novelty:  
 
 - Garden of forking paths [@rubin2017evaluation]
 
@@ -74,6 +74,66 @@ _Gather 'round little ones_
 - Salami slicing [@rogers1999salami]
 
 
+## Psychology Replication crisis
+
+Replication of 100 studies ^[From Psychological Science (PSCI), Journal of Personality and Social Psychology (JPSP), and Journal of Experimental Psychology: Learning, Memory, and Cognition (JEP: LMC)]
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+
+**Statistically significant**:  
+
+-  **97%** original &#8594; **36%** replications
+
+**Effect sizes**:
+
+- Replication effects were half the magnitude of original effects 
+
+
+:::
+
+::: {.column width="40%"}
+
+![@open2015estimating](img/replication-crisis.png)
+
+:::
+
+::::
+
+
+## Is there a crisis
+
+![@baker2016reproducibility](img/reproducibility-crisis.jpeg)
+
+
+## Why?
+
+
+![@baker2016reproducibility](img/reproducibility-crisis2.jpeg){width=65%}
+
+
+<!-- ## Is there a crisis? Why? -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="40%"} -->
+
+<!-- ![@baker2016reproducibility](img/reproducibility-crisis.jpeg) -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="60%"} -->
+
+
+<!-- ![](img/reproducibility-crisis2.jpeg){width=65%} -->
+<!-- ::: -->
+
+<!-- :::: -->
+
+
+
 ## Context
 
 Mean number of publications for new hires in the Canadian cognitive psychology job market
@@ -83,67 +143,70 @@ Mean number of publications for new hires in the Canadian cognitive psychology j
 :::
 
 
-## Psychology Replication crisis
-
-:::: {.columns}
-
-::: {.column width="55%"}
-
-- Replication of 100 studies 
-- Replication effects were half the magnitude of original effects 
-- __p < 0.05__: 
-  + **97%** of original studies
-  + **36%** of replications
-
-:::
-
-::: {.column width="45%"}
-
-![@open2015estimating](img/replication-crisis.png){}
-
-:::
-
-::::
-
-
-## Is there a crisis? Why?
-
-:::: {.columns}
-
-::: {.column width="40%"}
-
-![@baker2016reproducibility](img/reproducibility-crisis.jpeg)
-
-:::
-
-::: {.column width="60%"}
-
-
-![](img/reproducibility-crisis2.jpeg){width=65%}
-:::
-
-::::
-
-
 ## {background-image="img/help-run.gif"}
 
+
+# Issues
 
 # ~~Issues~~ Opportunities
 
 
 ## Improving Replicability
 
+<BR>  
 
-- **Improve methods**: increase n, better measures and manipulations, improve design, piloting
+**Improve methods**
 
-- **Reduce temptations**: p-hacking, hypothesizing after the results are known (i.e. HARKing), selective reporting &#8594; preregistration, internal replications
+**Reduce errors**
 
-- **Openness**: transparency of the research process, sharing methods, materials, procedures, and data
+**Openness**
 
+<BR>  
 @nosek2022replicability
 
 
-## Registered reports (RRs) {background-image="img/unicorn.png" background-size="30%" background-position="bottom right"}
+## Improving Replicability
+
+<BR> 
+
+**Improve methods**
+
+  + increase number of participants
+  + better measures and manipulations
+  + improve design
+  + piloting
+
+
+## Improving Replicability
+
+<BR> 
+
+**Reduce errors**
+
+- preregistration:  
+
+  + p-hacking
+  + hypothesizing after the results are known (i.e. HARKing)
+  + selective reporting
+
+- internal replications
+
+
+
+## Improving Replicability
+
+<BR> 
+
+**Openness**
+
+- transparency of the research process  
+
+- sharing methods, materials, procedures, and data
+
+
+# Registered reports {background-image="img/unicorn.png" background-size="40%" background-position="bottom right"}
+
+## Registered reports (RRs) {background-image="img/unicorn.png" background-size="20%" background-position="bottom right"}
 
 <BR><BR>
 _RRs were conceived to alter the incentives for authors and journals away from producing novel, positive, clean findings and towards conducting and publishing rigorous research on important questions._ @soderberg2021initial
@@ -158,6 +221,8 @@ _RRs were conceived to alter the incentives for authors and journals away from p
 
 
 RRs **outperformed comparison papers on all 19 criteria** [@soderberg2021initial]
+
+<BR> 
 
 Sizable improvements in:
 
@@ -214,17 +279,17 @@ _RRs could improve research quality while reducing publication bias..._
 
 :::: {.columns}
 
-::: {.column width="65%"}
+::: {.column width="70%"}
 
-- It is hard to know how to analyze an experiment before having the data in front of me
+- Hard to know how to analyze an experiment before having the data
 
-- There are always surprises when receiving new data. How can I create an analysis plan that will hold?
+- Always surprises when data arrives. How to create an analysis plan that will hold?
 
-- Collecting ALL-THE-THINGS&#8482;, allows me to figure out the best way to analyze the data afterwards
+- Collecting ALL-THE-THINGS&#8482; allows me to figure out the best way to do analysis
 
 :::
 
-::: {.column width="35%"}
+::: {.column width="30%"}
 
 
 ![](img/upside-down.png){fig-align="right"}
@@ -238,7 +303,7 @@ _RRs could improve research quality while reducing publication bias..._
 
 ## Background
 
-- In the [CSCN](https://cscn.uai.cl/) (~5-10 PI's) we used different technologies for experiments: Psychopy, Qualtrics, Limesurvey, jsPsych,...  
+- At the [CSCN](https://cscn.uai.cl/) (~5-10 PI's) we used different technologies for experiments: Psychopy, Qualtrics, Limesurvey, jsPsych,...  
 
 - Each protocol started almost from scratch. A single pre-existing task would define the technology used
 
@@ -271,18 +336,19 @@ _RRs could improve research quality while reducing publication bias..._
 
 ## Resources issues: projects as islands
 
-- Hours, days, weeks, wasted re-programming tasks
-- Thousands of € 'invested' in licenses (e.g. Qualtrics)
+- Time wasted re-programming tasks
+- Thousands of $/€ 'invested' in licenses (e.g. Qualtrics)
 - Piloting protocols as a part-time job for Research Assistants
-- Hours, days, weeks, wasted re-doing data preparation (each software has its own output format) 
+- Time wasted re-doing data preparation (each software has its own output format) 
 
 
 ## Reproducibility issues
 
-- Anyone knows why this 2012 paradigm/data analysis is not running?
-- Location and organization of projects 
-- Data preparation/analyses so ugly, sharing them is hard (let me clean up this a bit before sharing it with you)
+- Can I see what the participants saw in the 2012 protocol?
+- Data preparation/analyses so ugly, sharing them is hard (let me clean up this a bit before sending it)
 - Idiosyncratic analyses, some of which require licensed closed software (SPSS, Matlab,...)
+- Location and organization of projects 
+- Why is this 2012 paradigm/data analysis is not running?
 
 
 
@@ -298,17 +364,16 @@ _RRs could improve research quality while reducing publication bias..._
 
 2 questions voluntary survey:  
 
-![[https://cscn.uai.cl/lab/protocols/38/](https://cscn.uai.cl/lab/protocols/38/){target="_blank"}](img/QR-code.png){width=300, height=300, fig-align="left"}
+![[https://cscn.uai.cl/lab/protocols/38/](https://cscn.uai.cl/lab/protocols/38/){target="_blank"}](img/QR-survey.svg){width=400, fig-align="left"}
 
 :::
 
 ::::
 
-## Our wish list
+## Our wish list {background-image="img/euphoria.png" background-size="15%"}
 
-![](img/euphoria.png){width=40% fig-align="center"}
 
-## Our wish list {background-color="white" background-image="img/magic.png" background-size="40%" background-position="bottom right"}
+## Our wish list {background-image="img/magic.png" background-size="30%" background-position="bottom right"}
 
 - Open source software based on standard technologies
 - Reusable tasks (my project feeds future projects)
@@ -317,6 +382,7 @@ _RRs could improve research quality while reducing publication bias..._
 - Easy to create and analyze paradigms
 - Balancing participants
 - Online/offline
+- etc.
 
 
 
@@ -351,33 +417,36 @@ Open source tools to help create experimental paradigms with [jsPsych](https://w
 ::::
 
 
-## Goal
+## The tool
 
-A big catalog of tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker). Each task runs with [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys) to create virtual participants, and have a script in [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR) to automate data preparation (re-coding, reversing items, calculating dimensions, etc.).
-<BR><BR>
+<BR>
 
-The final goal is to help you have the data preparation and analysis ready before collecting any real data, reducing errors in the protocols, and making the move towards registered reports easier.
+A big catalog of tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker). Each task runs with [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys) to create virtual participants, and have a script in [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR) to automate data preparation (re-coding, reversing items, calculating dimensions, etc.)
 
 
-## So far {.smaller}
+## The goal
 
-- 3 main R packages (jsPsychMakeR, jsPsychMonkeys, jsPsychHelpeR)
-- 1 R package for Administration tasks (jsPsychAdmin)  
-- \> 80 pages [manual](https://gorkang.github.io/jsPsychRmanual/)  
-- ~100 tasks ready (with maker and helper scripts, plus original paper for most)  
-- \> 30 online protocols with \> 5000 participants (Prolific Academic, Social Media, etc.)  
-- A number of offline (lab) protocols and participants  
-- Used by researchers in Chile, Colombia, Spain  
-- Everything is open source: [https://github.com/gorkang/jsPsychRmanual](https://github.com/gorkang/jsPsychRmanual)
-- 2 publications using the system (50% Registered reports) + more in the pipeline...  
-- **So many errors** caught early... ( ͡ᵔ ͜ʖ ͡ᵔ )
+<BR>
 
+The final goal is to help you **have the data preparation and analysis ready before collecting any real data**, reducing errors in the protocols, and making the move towards registered reports easier
+
+
+## So far
+
+- ~100 tasks (maker + helper)  
+- Used by researchers in Chile, Colombia, Spain: 
+  + \> 30 online protocols with \> 5000 participants (Prolific Academic, Social Media, etc.)  + offline
+- Everything open source. \> 80 pages [manual](https://gorkang.github.io/jsPsychRmanual/)
+- &#9829; **So, many, errors,** caught early &#9829;  
+
+<!-- - 2 publications using the system (50% Registered reports) + more in the pipeline...   -->
+ <!-- {.smaller} -->
 
 ## The team
 
-Current developers: 
+Gorka Navarrete, Herman Valencia
 
-- Gorka Navarrete, Herman Valencia
+<BR>
 
 Initial idea and development: 
 
@@ -388,7 +457,7 @@ Discussions, ideas, testing:
 - Esteban Hurtado, Alvaro Rivera, Juan Pablo Morales, ...
 
 
-## jsPsychR tools
+## jsPsychR
 
 :::: {.columns}
 
@@ -453,12 +522,18 @@ Creating new tasks is as simple as:
 ```{r}
 
 jsPsychMaker::copy_example_tasks(
-  destination_folder = "~/Downloads/ExampleTasks"
+  destination_folder = "~/Downloads/ExampleTasks", 
+  which_tasks = "Slider"
   )
 
 ```
 
 2) Copy paste items, adapt csv/excel file
+
+```{r}
+system("nautilus ~/Downloads/ExampleTasks/Slider/Slider.csv")
+```
+
 
 3) Create protocol (see next slide)
 
@@ -468,14 +543,19 @@ jsPsychMaker::copy_example_tasks(
 
 ## Create protocol
 
-Create a protocol with three existing tasks plus the adapted Example tasks:
+<BR>
+Create a protocol with: 
+
+- 3 existing tasks: AIM, BNT, CRT
+- the adapted Example tasks (Slider)
+
 
 ```{r}
 jsPsychMaker::create_protocol(
-  canonical_tasks = c("AIM", "EAR", "IRI"),
+  canonical_tasks = c("AIM", "BNT", "CRTMCQ4"),
   folder_tasks = "~/Downloads/ExampleTasks/",
-  folder_output = "~/Downloads/protocol999",
-  launch_browser = FALSE
+  folder_output = "~/Downloads/protocol9996",
+  launch_browser = TRUE
 )
 ```
 
@@ -520,13 +600,13 @@ jsPsychMaker::create_protocol(
 ## Features jsPsychMonkeys
 
 - Fully open source (R, docker, selenium)
-- Online and offline
+- Works for online and offline protocols
 - Sequentially and in parallel
 - Get pictures of each screen
 - Store logs to make debugging easier
 - Watch the monkeys as they work for you
 - Random pauses or refreshing to simulate human behavior
-- Set random seed to make the monkey's behavior consistent
+- Set random seed to make the monkey's behavior predictable
 
 
 ## Release monkeys
@@ -534,16 +614,15 @@ jsPsychMaker::create_protocol(
 Release a single Monkey and take a look:
 
 ```{r}
-
 jsPsychMonkeys::release_the_monkeys(
   uid = 11,
-  initial_wait = 0,
-  wait_retry = 0,
-  local_folder_tasks = "~/Downloads/protocol999/",
-  open_VNC = TRUE
+  local_folder_tasks = "~/Downloads/protocol9996/",
+  open_VNC = TRUE,
+  wait_retry = 0
 )
 ```
 
+<BR>
 Release 10 Monkeys in parallel:
 
 ```{r}
@@ -551,7 +630,7 @@ jsPsychMonkeys::release_the_monkeys(
   uid = 1:10,
   sequential_parallel = "parallel",
   number_of_cores = 10,
-  local_folder_tasks = "~/Downloads/protocol999/",
+  local_folder_tasks = "~/Downloads/protocol9996/",
   open_VNC = FALSE
 )
 ```
@@ -590,7 +669,7 @@ jsPsychMonkeys::release_the_monkeys(
 
 ## Features jsPsychHelpeR {.hscroll .scrollable .smaller}
 
-- Fully open source (R)
+- Fully open source (R) 
 - Get tidy output data frames for each task, and for the whole protocol
 - Standard naming for tasks, dimensions, scales, ...
 - Include tests for common issues
@@ -604,28 +683,16 @@ jsPsychMonkeys::release_the_monkeys(
 
 ## jsPsychHelpeR
 
+<BR>
 Create project for data preparation:
 
 ```{r}
 jsPsychHelpeR::run_initial_setup(
-  pid = 999,
-  data_location = "~/Downloads/protocol999/.data/",
-  folder = "~/Downloads/jsPsychR999"
+  pid = 9996,
+  data_location = "~/Downloads/protocol9996/.data/",
+  folder = "~/Downloads/jsPsychHelpeR9996", 
+  dont_ask = TRUE
   )
-```
-
-Create a task correction script:  
-
-```{r}
-jsPsychHelpeR::create_new_task("MultiChoice")
-```
-
-Visualize and run data preparation:  
-
-```{r}
-targets::tar_visnetwork(targets_only = TRUE, label = "time")
-
-targets::tar_make()
 ```
 
 
@@ -634,10 +701,7 @@ targets::tar_make()
 Create protocol, simulate participants and prepare data...
 
 ```{r, eval=FALSE}
-
-# Full process
 rstudioapi::navigateToFile("R/script-full-process.R")
-
 ```
 
 [Create, simulate, prepare](https://www.youtube.com/watch?v=2OXI9lzE3zU){target="_blank"}
@@ -656,18 +720,19 @@ Let's try to download the data, process it and show a report with the results:
 <BR>
 Plan A: run Experiment Issues project
 
-```{r, eval=FALSE}
+```{r}
 
-rstudioapi::openProject("../jsPsychHelpeR-ExperimentIssues/jsPsychHelpeR-ExperimentIssues.Rproj", newSession = TRUE)
+rstudioapi::openProject("jsPsychHelpeR-ExperimentIssues/jsPsychHelpeR-ExperimentIssues.Rproj", newSession = TRUE)
 
 ```
 
 <BR><BR>
 Plan B: If something fails, we always have the monkeys!
 
-```{r, eval=FALSE}
+```{r}
 
-browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_monkeys.html")
+utils::browseURL(here::here("jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_monkeys.html"), 
+                 browser = "firefox")
 
 ```
 
@@ -677,43 +742,48 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 
 ## Limitations
 
-- Very easy to create new scales, and simple tasks, but complex experimental tasks <span style="color:orange;">require javascript and HTML knowledge</span> (although there are a good number of examples available)
+- Very easy to create new scales, and simple tasks, but complex experimental tasks <span style="color:red;">require javascript and HTML knowledge</span> (although there are a good number of examples available)
 
-- Data preparation for <span style="color:grey;">new experimental tasks</span> requires expertise in R (simple surveys not so much)  
+- Data preparation for new experimental tasks <span style="color:red;">requires expertise in R</span> (simple surveys not so much)  
 
 - Analysis reports require some R knowledge (simple templates available)
 
-- Requires access to a server for online tasks  
+- Needs access to a server for online tasks  
 
 - Only behavioral tasks
 
 
 # The future
 
- _The past is always tense, the future perfect._ Zadie Smith
+ _The past is always tense, the future perfect_  
+ 
+ Zadie Smith
 
 ## {background-color="black" background-image="img/future.jpg"}
 
 ## Too many things, too little time {background-image="img/working.gif"  background-size="20%" background-position="bottom right"}
 
-- Create templates for most common experimental designs  
-- Templates for data preparation and analysis of common experimental designs  
+Development is linked to our needs, time and resources. Future roadmap:  
+
+- Templates for common experimental designs (tasks, data preparation and analysis)  
 - More tasks, translations, tests, ...  
-- So far, development based in our needs (and possibilities)  
-- Upgrade to latest jsPsych when available  
-- Improve, clean, share...  
-- Publish jsPsychR paper  
+- Upgrade, improve, clean, share
+- jsPsychR paper  
 
 
-## Help {background-image="img/help.png" background-size="20%" background-position="bottom right"}
+## Help wellcome! {background-image="img/help.png" background-size="20%" background-position="bottom right"}
 
 - Javascript programmers
 
 - R programmers
 
+- Documentation
+
 - Task creators
 
 - Testers
+
+- Coffee brewers
 
 
 ## Back to Registered reports
@@ -721,90 +791,74 @@ browseURL("../jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_mon
 <BR><BR><BR>
 ![](img/RRs.webp)
 
-## Can jsPsych really help? (1/2)
+## Can jsPsychR really help? (1/2)
 
-- With jsPsychR, protocols are standardized with (mostly) clean code, open source, and based on web standards 
+- Protocols are standardized with (mostly) clean code, open source, and based on web standards 
 
-- Data preparation is 90% automatic, standardized, and beautiful 
+- Data preparation 90% automatic, standardized, beautiful 
 
-- Less errors in protocols and in data preparation
+- **Less errors** in protocols and in data preparation
 
 - Time from idea to protocol much lower
 
 - When errors are found and fixed, **old protocols can benefit from the corrections**, old results can be checked, ...
 
 
-## Can jsPsych really help? (2/2)
+## Can jsPsychR really help? (2/2)
 
-- Trivial to work on analysis <span style="color:darkgreen;">before</span> collecting human data
+- Trivial to work on analysis **before collecting human data**
 
 - Much easier to write up a good analysis plan, share it, improve it, ...
 
-- Create fully reproducible papers and results' reports easily
+- Easy to create **fully reproducible** papers and results' reports
 
-- Sharing protocol, materials, data preparation is trivial (single command)
+- Sharing protocol, materials, data preparation is painless (single command) ^[`usethis::use_github()`]
 
-- Creating future-proof fully reproducible data preparation projects (with Docker) is one command away
+- Creating future-proof fully reproducible data preparation projects (with Docker) is one command away ^[`jsPsychHelpeR::create_docker_container()`]
 
 
 
-## jsPsychR &#9829; RRs
+## jsPsychR &#9829; Registered Reports
 
 ![](img/reproducibility-crisis2_solved.jpeg){width=65% fig-align="center"}
 
-
-
-## Improving Peer Review
-
-<BR>
-
-:::: {.columns}
-
-::: {.column width="55%"}
-
-- Data should be made publicly available
-
-- Stimuli and materials should be made publicly available
-
-- The location of all of these files should be advertised in the manuscript, ...
-
-:::
-
-::: {.column width="45%"}
-
-![Source: [https://www.opennessinitiative.org/](https://www.opennessinitiative.org/)](img/PRO.png){width=80% fig-align="center" text-align="center" layout-valign="bottom"}
-
-
-:::
-
-::::
 ## More information
 
 For more information about RRs, templates, checklists, list of participating journals (\>300), etc.:  
 
-- [https://www.cos.io/initiatives/registered-reports](https://www.cos.io/initiatives/registered-reports)
+- [https://www.cos.io/initiatives/registered-reports](www.cos.io/initiatives/registered-reports)
 
 
 Also, check out the future:  
 
 - RRs v2: [Peer community in](https://peercommunityin.org/)
 
-And our manual:
+And if you are a reviewer:
 
-- [https://gorkang.github.io/jsPsychRmanual/](https://gorkang.github.io/jsPsychRmanual/)
+- No reviews unless data, stimuli and materials should be made publicly available ([www.opennessinitiative.org/](www.opennessinitiative.org/))
+
 
 ## References
 
 ::: {#refs}
 :::
 
-## Thanks!
 
-<BR><BR>
+# Thanks!
 
 <span style="color:grey;">Gorka Navarrete</span>
 
 gorkang\@gmail.com  
 
-https://fosstodon.org/\@gorkang  
+::: {layout="[-30, 10]" layout-valign="bottom"}
 
+![](img/QR-presentation.svg){width=70% fig-align="right"}
+
+:::
+
+::: footer
+
+Presentation: [https://gorkang.github.io/jsPsychRpresentation/](https://gorkang.github.io/jsPsychRpresentation/)  
+Manual: [https://gorkang.github.io/jsPsychRmanual/](https://gorkang.github.io/jsPsychRmanual/)  
+Contact: [https://fosstodon.org/\@gorkang](https://fosstodon.org/\@gorkang)
+:::

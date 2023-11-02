@@ -1,0 +1,8 @@
+.hscroll {
+  overflow: auto;
+  white-space: wrap;
+}
+
+.aside-footnotes {
+font-size: 14px;
+}

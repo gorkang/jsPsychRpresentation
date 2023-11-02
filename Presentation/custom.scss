@@ -1,5 +1,24 @@
 /*-- scss:rules --*/
 
+// Slide numbers
+.slide-number, .reveal.has-logo .slide-number {
+  color: #777777 !important;
+  font-size: 10px !important;
+}
+
+
+.slide-number:after {
+  content: "/ 65";
+} 
+
+
+// Do not show number in first page
 .reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}
+
+
+.slide-number:after > a[href*='title-slide'] {
+  content: "";
   display: none;
 }
