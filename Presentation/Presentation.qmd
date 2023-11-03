@@ -103,35 +103,15 @@ Replication of 100 studies ^[From Psychological Science (PSCI), Journal of Perso
 ::::
 
 
-## Is there a crisis
+## Is there a crisis?
 
 ![@baker2016reproducibility](img/reproducibility-crisis.jpeg)
 
 
-## Why?
+## Contributing factors
 
 
 ![@baker2016reproducibility](img/reproducibility-crisis2.jpeg){width=65%}
-
-
-<!-- ## Is there a crisis? Why? -->
-
-<!-- :::: {.columns} -->
-
-<!-- ::: {.column width="40%"} -->
-
-<!-- ![@baker2016reproducibility](img/reproducibility-crisis.jpeg) -->
-
-<!-- ::: -->
-
-<!-- ::: {.column width="60%"} -->
-
-
-<!-- ![](img/reproducibility-crisis2.jpeg){width=65%} -->
-<!-- ::: -->
-
-<!-- :::: -->
-
 
 
 ## Context
@@ -141,6 +121,30 @@ Mean number of publications for new hires in the Canadian cognitive psychology j
 ::: {layout="[10]" layout-valign="bottom"}
 ![@pennycook2018analysis](img/job-market.png){width=80% fig-align="center" text-align="center"}
 :::
+
+
+
+## And not only Psychology
+
+
+- Medicine [@ioannidis2005most]
+
+- Cancer research [@begley2012raise]
+
+- Finance [@bettis2012search]
+
+- Economics [@maniadis2017replicate]
+
+- Health informatics [@coiera2018does]
+
+- Operations and supply chain management [@pagell2021replication]
+
+- Methodological research [@boulesteix2020replication]
+
+- Education [@frias2020replication]
+
+- ...
+
 
 
 ## {background-image="img/help-run.gif"}
@@ -362,7 +366,7 @@ _RRs could improve research quality while reducing publication bias..._
 
 ::: {.column width="70%"}
 
-2 questions voluntary survey:  
+2 questions survey:  
 
 ![[https://cscn.uai.cl/lab/protocols/38/](https://cscn.uai.cl/lab/protocols/38/){target="_blank"}](img/QR-survey.svg){width=400, fig-align="left"}
 
@@ -377,7 +381,7 @@ _RRs could improve research quality while reducing publication bias..._
 
 - Open source software based on standard technologies
 - Reusable tasks (my project feeds future projects)
-- Based on a mature project or technologies
+- Based on a mature project or technologies [@de2015jspsych] ^[Psych: [https://www.jspsych.org/](https://www.jspsych.org/)]
 - As many 'automagic' things as possible
 - Easy to create and analyze paradigms
 - Balancing participants
@@ -742,7 +746,7 @@ utils::browseURL(here::here("jsPsychHelpeR-ExperimentIssues/outputs/reports/repo
 
 ## Limitations
 
-- Very easy to create new scales, and simple tasks, but complex experimental tasks <span style="color:red;">require javascript and HTML knowledge</span> (although there are a good number of examples available)
+- Easy to create new scales and simple tasks, but complex experimental tasks <span style="color:red;">require javascript knowledge</span> (although there are a good number of examples available)
 
 - Data preparation for new experimental tasks <span style="color:red;">requires expertise in R</span> (simple surveys not so much)  
 
@@ -756,8 +760,9 @@ utils::browseURL(here::here("jsPsychHelpeR-ExperimentIssues/outputs/reports/repo
 # The future
 
  _The past is always tense, the future perfect_  
- 
- Zadie Smith
+
+<span style="color:grey;">Zadie Smith</span> 
+
 
 ## {background-color="black" background-image="img/future.jpg"}
 
@@ -784,6 +789,8 @@ Development is linked to our needs, time and resources. Future roadmap:
 - Testers
 
 - Coffee brewers
+
+- Patrons
 
 
 ## Back to Registered reports
@@ -824,7 +831,7 @@ Development is linked to our needs, time and resources. Future roadmap:
 
 ## More information
 
-For more information about RRs, templates, checklists, list of participating journals (\>300), etc.:  
+RRs' templates, checklists, participating journals (\> 300):  
 
 - [https://www.cos.io/initiatives/registered-reports](www.cos.io/initiatives/registered-reports)
 
@@ -835,7 +842,7 @@ Also, check out the future:
 
 And if you are a reviewer:
 
-- No reviews unless data, stimuli and materials should be made publicly available ([www.opennessinitiative.org/](www.opennessinitiative.org/))
+- No reviews unless data, stimuli and materials are publicly available ([www.opennessinitiative.org/](www.opennessinitiative.org/))
 
 
 ## References
