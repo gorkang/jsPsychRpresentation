@@ -74,6 +74,17 @@ The need for significance and novelty:
 - Salami slicing [@rogers1999salami]
 
 
+
+## The natural selection of bad science
+
+<BR>
+_The persistence of poor methods results partly from incentives that favour them, leading to the natural selection of bad science. This dynamic requires no conscious strategizing (...), only that publication is a principal factor for career advancement._
+
+<BR>
+
+_(...) in the absence of change, the existing incentives will necessarily lead to the degradation of scientific practices._ [@smaldino2016natural]
+
+
 ## Psychology Replication crisis
 
 Replication of 100 studies ^[From Psychological Science (PSCI), Journal of Personality and Social Psychology (JPSP), and Journal of Experimental Psychology: Learning, Memory, and Cognition (JEP: LMC)]
