@@ -1,0 +1,16 @@
+# English ------------------------------------------------
+
+Please indicate the extent to which you agree with each of the following statements by using the following scale: 
+<BR><BR>
+1 = strongly disagree, 2 = disagree, 3 = neutral, 4 = agree, 5 = strongly agree.
+
+
+I tend to bounce back quickly after hard times
+I have a hard time making it through stressful events
+It does not take me long to recover from a stressful event
+It is hard for me to snap back when something bad happens
+I usually come through difficult times with little trouble
+I tend to take a long time to get over set-backs in my life
+
+
+strongly disagree; disagree; neutral; agree; strongly agree

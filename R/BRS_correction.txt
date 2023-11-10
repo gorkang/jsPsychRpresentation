@@ -1,0 +1,12 @@
+items_to_reverse = c("02", "04", "06")
+
+
+RAW == "strongly disagree" ~ 1,
+RAW == "disagree" ~ 2,
+RAW == "neutral" ~ 3,
+RAW == "agree" ~ 4,
+RAW == "strongly agree" ~ 5,
+
+
+
+# Comment out dimensions calculation

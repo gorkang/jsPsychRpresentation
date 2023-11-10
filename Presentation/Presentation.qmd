@@ -528,25 +528,32 @@ DT::datatable(DF_raw, filter = 'top', options = list(pageLength = 100, dom = 't'
 
 ```
 
-## Create New Tasks
+## Create New Tasks {.smaller}
 
 Creating new tasks is as simple as: 
 
-1) Copy example tasks to your computer
+1) Copy example task to your computer
 
 ```{r}
 
 jsPsychMaker::copy_example_tasks(
   destination_folder = "~/Downloads/ExampleTasks", 
-  which_tasks = "Slider"
+  which_tasks = "MultiChoice"
   )
 
 ```
 
-2) Copy paste items, adapt csv/excel file
+2) Copy paste items in excel file, edit instructions
 
 ```{r}
-system("nautilus ~/Downloads/ExampleTasks/Slider/Slider.csv")
+# Open source document
+rstudioapi::navigateToFile(here::here("R/BRS.txt"))
+
+# Edit instructions
+rstudioapi::navigateToFile("~/Downloads/ExampleTasks/MultiChoice/MultiChoice_instructions.html")
+
+# Adapt csv/excel file
+system("nautilus ~/Downloads/ExampleTasks/MultiChoice/MultiChoice.csv")
 ```
 
 
@@ -561,13 +568,13 @@ system("nautilus ~/Downloads/ExampleTasks/Slider/Slider.csv")
 <BR>
 Create a protocol with: 
 
-- 3 existing tasks: AIM, BNT, CRT
-- the adapted Example tasks (Slider)
+- 1 existing task: Berlin Numeracy Test
+- the adapted Example task (Brief Resilience Scale)
 
 
 ```{r}
 jsPsychMaker::create_protocol(
-  canonical_tasks = c("AIM", "BNT", "CRTMCQ4"),
+  canonical_tasks = c("BNT"),
   folder_tasks = "~/Downloads/ExampleTasks/",
   folder_output = "~/Downloads/protocol9996",
   launch_browser = TRUE
@@ -630,7 +637,7 @@ Release a single Monkey and take a look:
 
 ```{r}
 jsPsychMonkeys::release_the_monkeys(
-  uid = 11,
+  uid = "1",
   local_folder_tasks = "~/Downloads/protocol9996/",
   open_VNC = TRUE,
   wait_retry = 0
