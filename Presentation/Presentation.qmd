@@ -49,14 +49,14 @@ _Gather 'round little ones_
 ## Scientific method
 
 ::: {layout="[10]" layout-valign="bottom"}
-![[Source: Center for Open Science |MODIFIED|](https://www.cos.io/initiatives/registered-reports)](img/issues-scientific-method-osf_clean.png){width=80% fig-align="center" text-align="center" layout-valign="bottom"}
+![[Source: Center for Open Science |MODIFIED|](https://www.cos.io/initiatives/registered-reports){target="_blank"}](img/issues-scientific-method-osf_clean.png){width=80% fig-align="center" text-align="center" layout-valign="bottom"}
 :::
 
 
 ## Some issues
 
 ::: {layout="[10]" layout-valign="bottom"}
-![[Source: Center for Open Science](https://www.cos.io/initiatives/registered-reports)](img/issues-scientific-method-osf.png){width=80% fig-align="center" text-align="center" layout-valign="bottom"}
+![[Source: Center for Open Science](https://www.cos.io/initiatives/registered-reports){target="_blank"}](img/issues-scientific-method-osf.png){width=80% fig-align="center" text-align="center" layout-valign="bottom"}
 :::
 
 ## Experimenter degrees of freedom, incentives, issues
@@ -318,7 +318,7 @@ _RRs could improve research quality while reducing publication bias..._
 
 ## Background
 
-- At the [CSCN](https://cscn.uai.cl/) (~5-10 PI's) we used different technologies for experiments: Psychopy, Qualtrics, Limesurvey, jsPsych,...  
+- At the [CSCN](https://cscn.uai.cl/){target="_blank"} (~5-10 PI's) we used different technologies for experiments: Psychopy, Qualtrics, Limesurvey, jsPsych,...  
 
 - Each protocol started almost from scratch. A single pre-existing task would define the technology used
 
@@ -392,7 +392,7 @@ _RRs could improve research quality while reducing publication bias..._
 
 - Open source software based on standard technologies
 - Reusable tasks (my project feeds future projects)
-- Based on a mature project or technologies [@de2015jspsych] ^[Psych: [https://www.jspsych.org/](https://www.jspsych.org/)]
+- Based on a mature project or technologies [@de2015jspsych] ^[Psych: [https://www.jspsych.org/](https://www.jspsych.org/){target="_blank"}]
 - As many 'automagic' things as possible
 - Easy to create and analyze paradigms
 - Balancing participants
@@ -412,14 +412,14 @@ A few years latter...
 
 ::: {.column width="60%"}
 
-Open source tools to help create experimental paradigms with [jsPsych](https://www.jspsych.org), simulate participants and standardize the data preparation and analysis  
+Open source tools to help create experimental paradigms with [jsPsych](https://www.jspsych.org){target="_blank"}, simulate participants and standardize the data preparation and analysis  
 <BR>
 
-1\) [jsPsychMaker](https://github.com/gorkang/jsPsychMaker)
+1\) [jsPsychMaker](https://github.com/gorkang/jsPsychMaker){target="_blank"}
 
-2\) [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys)
+2\) [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys){target="_blank"}
 
-3\) [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR)
+3\) [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR){target="_blank"}
 
 :::
 
@@ -436,7 +436,7 @@ Open source tools to help create experimental paradigms with [jsPsych](https://w
 
 <BR>
 
-A big catalog of tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker). Each task runs with [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys) to create virtual participants, and have a script in [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR) to automate data preparation (re-coding, reversing items, calculating dimensions, etc.)
+A big catalog of tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker){target="_blank"}. Each task runs with [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys){target="_blank"} to create virtual participants, and have a script in [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR){target="_blank"} to automate data preparation (re-coding, reversing items, calculating dimensions, etc.)
 
 
 ## The goal
@@ -451,7 +451,7 @@ The final goal is to help you **have the data preparation and analysis ready bef
 - ~100 tasks (maker + helper)  
 - Used by researchers in Chile, Colombia, Spain: 
   + \> 30 online protocols with \> 5000 participants (Prolific Academic, Social Media, etc.)  + offline
-- Everything open source. \> 80 pages [manual](https://gorkang.github.io/jsPsychRmanual/)
+- Everything open source. \> 80 pages [manual](https://gorkang.github.io/jsPsychRmanual/){target="_blank"}
 - &#9829; **So, many, errors,** caught early &#9829;  
 
 <!-- - 2 publications using the system (50% Registered reports) + more in the pipeline...   -->
@@ -479,7 +479,7 @@ Discussions, ideas, testing:
 ::: {.column width="40%"}
 
 <BR><BR>
-1\) **[jsPsychMaker](https://github.com/gorkang/jsPsychMaker)**
+1\) **[jsPsychMaker](https://github.com/gorkang/jsPsychMaker){target="_blank"}**
 
 2\) <span style="color:grey;">jsPsychMonkeys</span>
 
@@ -502,7 +502,7 @@ Discussions, ideas, testing:
 
 ## Features jsPsychMaker {.hscroll .scrollable .smaller}
 
-- Fully open source, based on web standards ([jsPsych](https://www.jspsych.org/))
+- Fully open source, based on web standards ([jsPsych](https://www.jspsych.org/){target="_blank"})
 - Reuse ~ 100 tasks
 - Online and offline protocols
 - Balancing of participants to between participants conditions
@@ -591,7 +591,7 @@ jsPsychMaker::create_protocol(
 <BR><BR>
 1\) <span style="color:grey;">jsPsychMaker</span>
 
-2\) **[jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys)**
+2\) **[jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys){target="_blank"}**
 
 3\) <span style="color:grey;">jsPsychHelpeR</span>
 
@@ -669,7 +669,7 @@ jsPsychMonkeys::release_the_monkeys(
 
 2\) <span style="color:grey;">jsPsychMonkeys</span>
 
-3\) **[jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR)**
+3\) **[jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR){target="_blank"}**
 
 :::
 
@@ -749,12 +749,14 @@ rstudioapi::openProject("jsPsychHelpeR-ExperimentIssues/jsPsychHelpeR-Experiment
 ```
 
 <BR><BR>
-Plan B: If something fails, we always have the monkeys!
+Plan B: If something fails, we always have the [monkeys](https://gorkang.github.io/jsPsychRpresentation/report_analysis_monkeys.html){target="_blank"}!
 
 ```{r}
 
 utils::browseURL(here::here("jsPsychHelpeR-ExperimentIssues/outputs/reports/report_analysis_monkeys.html"), 
                  browser = "firefox")
+
+
 
 ```
 
@@ -851,16 +853,16 @@ Development is linked to our needs, time and resources. Future roadmap:
 
 RRs' templates, checklists, participating journals (\> 300):  
 
-- [https://www.cos.io/initiatives/registered-reports](www.cos.io/initiatives/registered-reports)
+- [https://www.cos.io/initiatives/registered-reports](www.cos.io/initiatives/registered-reports){target="_blank"}
 
 
 Also, check out the future:  
 
-- RRs v2: [Peer community in](https://peercommunityin.org/)
+- RRs v2: [Peer community in](https://peercommunityin.org/){target="_blank"}
 
 And if you are a reviewer:
 
-- No reviews unless data, stimuli and materials are publicly available ([www.opennessinitiative.org/](www.opennessinitiative.org/))
+- No reviews unless data, stimuli and materials are publicly available ([www.opennessinitiative.org/](www.opennessinitiative.org/){target="_blank"})
 
 
 ## References
@@ -883,7 +885,7 @@ gorkang\@gmail.com
 
 ::: footer
 
-Presentation: [https://gorkang.github.io/jsPsychRpresentation/](https://gorkang.github.io/jsPsychRpresentation/)  
-Manual: [https://gorkang.github.io/jsPsychRmanual/](https://gorkang.github.io/jsPsychRmanual/)  
-Contact: [https://fosstodon.org/\@gorkang](https://fosstodon.org/\@gorkang)
+Presentation: [https://gorkang.github.io/jsPsychRpresentation/](https://gorkang.github.io/jsPsychRpresentation/){target="_blank"}  
+Manual: [https://gorkang.github.io/jsPsychRmanual/](https://gorkang.github.io/jsPsychRmanual/){target="_blank"}  
+Contact: [https://fosstodon.org/\@gorkang](https://fosstodon.org/\@gorkang){target="_blank"}
 :::
