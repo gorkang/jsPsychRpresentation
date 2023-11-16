@@ -1,0 +1,511 @@
+---
+title: "Analysis"
+format: 
+  html:
+    embed-resources: true
+    toc: true
+editor: source
+editor_options: 
+  chunk_output_type: console
+params:
+  DFs: list()
+---
+
+```{r setup, include=FALSE}
+library(see)
+library(ggstatsplot)
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+# DEBUG
+  # Makes sure all libraries and functions are available to work interactivelly
+  # targets::tar_load_globals() # Loads all libraries
+
+# Loads DF_analysis
+# targets::tar_load(DF_analysis)
+source(here::here("_targets_packages.R"))
+DF_analysis = readRDS(here::here("_targets/objects/DF_analysis"))
+
+date_last_update = format(file.info(here::here("_targets/objects/DF_analysis"))$mtime, format="%d/%m/%Y")
+
+```
+
+
+## Data preparation
+
+This is an automatically generated report using the data from the [survey about experiment issues](https://cscn.uai.cl/lab/protocols/38/).  
+
+In the tabs below you can see tables, descriptive plots, analysis, etc.  
+
+So far, `r nrow(DF_analysis$DF_analysis)` people completed the survey.  
+
+The last time the data was updated was on `r date_last_update`.    
+
+
+```{r data-preparation}
+
+DF =
+ DF_analysis$DF_analysis %>% 
+  
+  # Update with your variable names
+  select(id, ends_with("_DIRd"), ends_with("_DIRt")) |> 
+  select(-ExperimentsIssues_IssuesExperiments_DIRd) |> 
+  mutate(ExperimentsIssues_FrequencyIssues_DIRd = 
+           forcats::fct_relevel(ExperimentsIssues_FrequencyIssues_DIRd, 
+                                "Never", "Rarely", "Sometimes", "Often","Always")) |> 
+  rename(`Frecuency of issues` = ExperimentsIssues_FrequencyIssues_DIRd,
+         `Who is God` = ExperimentsIssues_WhoIsGod_DIRd,
+         Experience = ExperimentsIssues_Experience_DIRd)
+
+
+DF_Issues = 
+  DF_analysis$DF_analysis |> 
+  select(id, ExperimentsIssues_IssuesExperiments_DIRd) |> 
+  pivot_longer(ends_with("DIRd"), values_to = "IssuesExperiments_DIRd") |> 
+  separate_longer_delim(IssuesExperiments_DIRd, delim = "; ") |> 
+  filter(!IssuesExperiments_DIRd %in% c("NA", "Other")) |> 
+  select(-name)
+
+```
+
+## Descriptive tables
+
+::: {.panel-tabset}
+
+
+### Table 1: Frequency of issues
+
+
+```{r descriptive-table}
+
+     # trialid == "ExperimentsIssues_005" & RAW == "Student (Master, PhD,...)" ~ "1",
+     #    trialid == "ExperimentsIssues_005" & RAW == "Early Career Academic" ~ "2",
+     #    trialid == "ExperimentsIssues_005" & RAW == "Postdoc or non-ternure track Academic" ~ "3",
+     #    trialid == "ExperimentsIssues_005" & RAW == "Senior academic" ~ "4",
+
+table1 = DF |> 
+  select(-id, -Goodbye_DIRt, -Consent_DIRt) |> 
+  mutate(Experience = 
+           # as.numeric(Experience),
+         case_when(
+           Experience == "1" ~ "Student",
+           Experience == "2" ~ "Postdoc", 
+           Experience == "3" ~ "Early Career", 
+           Experience == "4" ~ "Senior"
+           ),
+         Experience = forcats::fct_relevel(Experience, 
+                                           "Student", "Postdoc", "Early Career", "Senior")
+         ) |> 
+  gtsummary::tbl_summary(
+    missing_text = "?"
+    ) |> 
+  gtsummary::modify_caption("Table 1. Frequency of issues and GodLike behaviour")
+  
+
+table1
+
+```
+
+### Table 2: Types of issues
+
+```{r descriptive-table2}
+#| column: screen
+
+n_issues = 10
+
+if (nrow(DF_Issues > 0)) {
+
+  table2 = DF_Issues %>% 
+    select(IssuesExperiments_DIRd) %>% 
+    mutate(IssuesExperiments_DIRd = forcats::fct_lump_n(IssuesExperiments_DIRd, n = n_issues)) |>
+  
+    gtsummary::tbl_summary(missing_text = "Not me", 
+                           label = list(IssuesExperiments_DIRd ~ "Issue"),
+                           sort = IssuesExperiments_DIRd ~ "frequency") |> 
+    gtsummary::modify_header(label = "**Issues in experiments**") |> 
+    gtsummary::modify_caption(paste0("Table 2. Frequency of types of issues. ", n_issues, " most common issues"))
+  
+  table2
+
+}
+
+```
+
+
+
+### Table 3: Experience & Frequency
+
+```{r descriptive-table3}
+#| column: screen
+
+
+  table2 = DF %>% 
+    select(`Frecuency of issues`, Experience) %>% 
+  
+    gtsummary::tbl_summary(by = Experience, 
+                           missing_text = "Unknown", 
+                           label = list(Experience ~ "Expertise"),
+                           sort = Experience ~ "frequency") |> 
+    gtsummary::modify_header(label = "**Issues in experiments**") |> 
+    gtsummary::modify_caption(paste0("Table 3. Frequency of types of issues by Expertise. "))
+  
+  table2
+
+
+```
+:::
+
+## Plots
+
+::: {.panel-tabset}
+
+
+
+### Plot 1: Frequency of issues
+
+
+```{r plots}
+#| fig-align: center
+#| fig.width: 8
+#| fig.height: 8
+
+# Remember to change the variables in your plot
+
+plot1 =
+  DF |> 
+  mutate(`Frecuency of issues` = forcats::fct_relevel(`Frecuency of issues`, "Never", "Rarely", "Sometimes", "Often","Always")) |>
+  ggplot(aes(`Frecuency of issues`, fill = `Frecuency of issues`)) +
+  geom_bar(show.legend = FALSE)  +
+  # theme_minimal(base_size = 16) +
+  labs(title = "Frequency of issues in experiments",
+       x = "",
+       caption = paste0(nrow(DF_Issues), " issues reported by ", length(unique(DF_Issues$id)), " people")) +
+  ggthemes::theme_fivethirtyeight(base_size = 16) +
+  ggthemes::scale_fill_wsj()
+
+plot1
+
+# plot1 + facet_wrap(~ Experience, nrow = 2)
+```
+
+
+### Plot 2: Types of issues
+
+```{r plots2}
+#| fig-align: center
+#| fig-cap: "Figure 2: Types of issues"
+#| fig.width: 10
+#| fig.height: 10
+
+plot2 =
+  DF_Issues %>%
+  select(IssuesExperiments_DIRd) |>
+  mutate(IssuesExperiments_DIRd = forcats::fct_lump_n(IssuesExperiments_DIRd, n = n_issues)) |> 
+  count(IssuesExperiments_DIRd) |>
+  mutate(value = fct_reorder(IssuesExperiments_DIRd, n)) %>% 
+  ggplot(aes(value, n, group = value, label = value)) +
+  
+  # ggplot(aes(pos, total,fill = pos, group = total,label = name)) +
+  geom_col(show.legend = FALSE,
+           position = position_dodge2(), 
+           width = .5) +
+  labs(title = "Types of issues in experiments",
+       subtitle = paste0(n_issues, " most common issues"),
+       x = "",
+       caption = paste0(nrow(DF_Issues), " issues reported by ", length(unique(DF_Issues$id)), " people")) +
+   geom_label(color = "white", fill = "grey35", hjust = 1, label.size = 0,
+    position = position_dodge2(width = .5),
+    show.legend = FALSE, size = 15 / .pt, label.padding = unit(2, "pt")
+  ) + 
+  coord_flip() +
+  # theme_minimal(base_size = 16) +
+  ggthemes::theme_fivethirtyeight(base_size = 16) +
+  ggthemes::scale_fill_wsj() +
+  theme(axis.text.y = element_blank())
+
+
+plot2
+
+
+```
+
+### Plot 3: Frequency by expertise
+
+```{r plots3}
+#| fig-align: center
+#| fig-cap: "Figure 2: Types of issues"
+#| fig.width: 10
+#| fig.height: 10
+
+DF_plot3 = DF %>%
+  select(Experience, `Frecuency of issues`) %>% 
+  mutate(Experience = as.numeric(Experience),
+         `Frecuency of issues` = 
+           case_when(
+             `Frecuency of issues` == "Never" ~ 0,
+             `Frecuency of issues` == "Rarely" ~ 1, 
+             `Frecuency of issues` == "Sometimes" ~ 2, 
+             `Frecuency of issues` == "Often" ~ 3,
+             `Frecuency of issues` == "Always" ~ 4))
+
+plot3 =
+  DF_plot3 |> 
+  ggplot(aes(Experience, `Frecuency of issues`)) +
+  geom_jitter(width = .1, height = .1) +
+  geom_smooth(method = "lm") +
+  labs(title = "Experience and Frequency of issues ",
+       # x = "",
+       # caption = paste0(nrow(DF_Issues), " issues reported by ", length(unique(DF_Issues$id)), " people")
+       ) +
+   
+  # ggthemes::theme_fivethirtyeight(base_size = 16) +
+  theme_minimal(base_size = 16) + 
+  ggthemes::scale_color_wsj() 
+
+
+plot3
+
+```
+
+
+
+
+:::
+
+
+## Analysis
+
+::: {.panel-tabset}
+
+### Results
+
+```{r model}
+if (nrow(DF_Issues > 0)) {
+  DF_Frequency = 
+    DF |> 
+    select(id, `Frecuency of issues`) |> 
+    # filter(`Frecuency of issues` != "Never") |> 
+    mutate(`Frequency of Issues` = 
+             case_when(
+               `Frecuency of issues` == "Never" ~ 0,
+               `Frecuency of issues` == "Rarely" ~ 1,
+               `Frecuency of issues` == "Sometimes" ~ 2,
+               `Frecuency of issues` == "Often" ~ 3,
+               `Frecuency of issues` == "Always" ~ 4,
+             )) |> 
+    rename(`How often your friends have issues` = `Frecuency of issues`)
+    # select(-`Frecuency of issues`)
+  
+  DF_n_issues = 
+    DF_Issues |> 
+    count(id, name = "Number of Issues")
+  
+  
+  DF_experience = DF |> 
+    mutate(Experience = as.numeric(Experience)) |> 
+    drop_na(Experience) |> 
+    select(id, Experience)
+
+  
+  DF_model = 
+    DF_Frequency |> 
+    left_join(DF_n_issues, by = join_by(id)) |> 
+    left_join(DF_experience, by = join_by(id)) |> 
+    
+    replace_na(list(`Number of Issues` = 0))
+  
+  
+  model = lm(`Number of Issues` ~ `Frequency of Issues` + Experience, DF_model)
+  
+  report_safely = purrr::safely(report::report)
+  SAFE_report = report_safely(model)
+  if(!is.null(SAFE_report$result)) SAFE_report$result
+}
+```
+
+### Table
+
+```{r model-table}
+
+if (nrow(DF_Issues > 0)) {
+  gtsummary::tbl_regression(model, intercept = TRUE) |> 
+    gtsummary::add_glance_table(include = c("r.squared", "adj.r.squared", "df.residual", "nobs"))
+}
+# broom::glance(model)
+```
+
+
+### Plot model
+
+```{r plot-model1}
+#| fig-cap: "Figure 3: Model plot"
+#| fig-align: center
+#| fig.width: 12
+#| fig.height: 10
+
+if (nrow(DF_Issues > 0)) {
+  
+  # Safely define n_issues
+  if (max(DF_model$`Number of Issues`) > 10) {
+    n_issues = 10
+  } else if(max(DF_model$`Number of Issues`) < 2) {
+    n_issues = 2
+  } else {
+    n_issues = max(DF_model$`Number of Issues`)
+  }
+  
+  ggscatterstats(
+    data  = DF_model,
+    x     = `Number of Issues`, 
+    y     = `Frequency of Issues`,
+    point.height.jitter = .2,
+    point.width.jitter = .2,
+    title = "How often there are issues vs number of issues"
+  ) +
+    scale_x_continuous(n.breaks = n_issues) +
+    scale_y_continuous(n.breaks = 4) +
+    theme_minimal(base_size = 16)
+}
+```
+
+### Descriptive plot
+
+```{r plot-model2}
+#| fig-cap: "Figure 4: Descriptive plot"
+#| fig-align: center
+#| fig.width: 12
+#| fig.height: 10
+
+if (nrow(DF_Issues > 0)) {
+
+  DF_model |> 
+    filter(`Number of Issues` > 0) |> 
+    ggplot(aes(`How often your friends have issues`, 
+             `Number of Issues`, fill = 
+               `How often your friends have issues`)) +
+    geom_violindot(fill_dots = "black", show.legend = FALSE, dots_size = 2) +
+    theme_minimal(base_size = 16) +
+    ggthemes::scale_fill_wsj() +
+    labs(title = "How often there are issues vs number of issues")
+
+}
+```
+
+
+### Surface plot
+
+```{r plot4}
+
+
+Issues = DF_model |> 
+  select(id, `Frequency of Issues`, `Number of Issues`, Experience) |> 
+  rename(Frequency = `Frequency of Issues`) |> 
+  drop_na() |> 
+  group_by(Frequency, Experience) |> 
+  summarise(Issues = mean(`Number of Issues`),.groups = "drop") |> 
+  pivot_wider(names_from = Experience, values_from = Issues) |> 
+  select(-Frequency) |> 
+  as.matrix()
+
+
+
+rownames(Issues) <- c("Never", "Rarely", "Sometimes", "Often", "Always")
+colnames(Issues) <- c("Student", "Postdoc", "Early Career", "Senior")
+
+Frequency = c("Never", "Rarely", "Sometimes", "Often", "Always" )
+Experience = c("Student", "Postdoc", "Early Career", "Senior")
+
+plot1 = plotly::plot_ly(x = ~ Experience,
+                        y = ~ Frequency,
+                        z = ~ Issues) |>
+  plotly::add_surface(
+    name = "3D mesh",
+    connectgaps = TRUE,
+    hidesurface = TRUE,
+    showscale = FALSE,
+    contours = list(
+      x = list(
+        show = TRUE,
+        width = 1,
+        highlightwidth = 2,
+        highlightcolor = "#41a7b3",
+        highlight = TRUE
+      ),
+      y = list(
+        show = TRUE,
+        width = 1,
+        highlightwidth = 2,
+        highlightcolor = "#41a7b3",
+        highlight = TRUE
+      ),
+      z = list(
+        show = FALSE,
+        width = 1,
+        highlightwidth = 2,
+        highlightcolor = "#41a7b3",
+        highlight = FALSE
+      )
+    )
+  ) |>
+  plotly::add_surface(
+    colorbar=list(title='Issues'),
+    name = "surface",
+    connectgaps = FALSE,
+    contours = list(
+      x = list(
+        show = F,
+        width = 1,
+        highlightwidth = 2,
+        highlightcolor = "#41a7b3",
+        highlight = TRUE
+      ),
+      y = list(
+        show = F,
+        width = 1,
+        highlightwidth = 2,
+        highlightcolor = "#41a7b3",
+        highlight = TRUE
+      ),
+      z = list(
+        show = FALSE,
+        width = 1,
+        highlightwidth = 2,
+        highlightcolor = "#41a7b3",
+        highlight = FALSE
+      )
+    )
+  ) |> 
+  plotly::layout(showlegend = FALSE,
+                 title = "Issues by experience and frequency",
+                 scene = list(
+                     xaxis = list(title = ''),
+                     yaxis = list(title = ''),
+                     zaxis = list(title = 'Number of Issues')
+                   ),
+                   margin = list(
+                     b = 40, 
+                     l = 60, 
+                     r = 10, 
+                     t = 25
+                   )
+                 )
+                 
+
+plot1
+
+
+```
+
+:::
+
+
+## Anything else
+
+- Automatic reports per participant
+- Automatic emails to participants
+- Fully reproducible pdf version of article using journal templates
+- Etc.
+
+![](imagination.gif)
+
+---  

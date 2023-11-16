@@ -1,0 +1,5 @@
+ID,plugin,if_question,options,prompt
+1,survey-multi-choice,,Always;Often;Sometimes;Rarely;Never,"From what you have heard, how often there are issues in experimental protocols? Issues can range from spelling errors in the protocol to errors in the experimental design that prevent from doing desired analysis."
+2,survey-multi-select,1 != Never,Spelling errors; Important content errors; Errors in the coding of items; Errors in participants balancing to conditions; Data not what we expected; Data preparation was harder than it could have been; Match between hypotheses and data not clear; Some variables or questions asked to participants but not used in the analysis/paper; Errors so bad that my friend had to start over; My friends do not have errors in their protocols; Other,Which of the following issues happened to your friend. In a experimental protocol or survey where data was collected in the lab or online
+3,survey-multi-choice,1 == Never,"Of course; No, but my Research assistant is",Are you a God?
+4,survey-text,2 == Other,,"What kind of errors did you have (if more than one, separate them by ;)"

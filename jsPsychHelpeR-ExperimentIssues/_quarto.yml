@@ -1,0 +1,4 @@
+project:
+  output-dir: outputs
+  render:
+    - reports/report_analysis.qmd
