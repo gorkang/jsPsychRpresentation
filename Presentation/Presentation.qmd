@@ -43,7 +43,7 @@ _Gather 'round little ones_
 1) Read literature & come up with a _shiny_^[Novel, counter-intuitive, interesting,...] idea
 2) Design and run experiment
 3) Prepare data & **explore different analytic approaches**
-4) If significant result &#8594; Write paper
+4) ~~If~~ When significant result &#8594; Write paper
 
 
 ## Scientific method
@@ -78,7 +78,7 @@ The need for significance and novelty:
 ## The natural selection of bad science
 
 <BR>
-_The persistence of poor methods results partly from incentives that favour them, leading to the natural selection of bad science. This dynamic requires no conscious strategizing (...), only that publication is a principal factor for career advancement._
+_The persistence of poor methods results partly from incentives that favour them, leading to the natural selection of bad science. This dynamic requires no conscious strategizing (...), only that **publication is a principal factor for career advancement**._
 
 <BR>
 
@@ -224,7 +224,7 @@ Mean number of publications for new hires in the Canadian cognitive psychology j
 ## Registered reports (RRs) {background-image="img/unicorn.png" background-size="20%" background-position="bottom right"}
 
 <BR><BR>
-_RRs were conceived to alter the incentives for authors and journals away from producing novel, positive, clean findings and towards conducting and publishing rigorous research on important questions._ @soderberg2021initial
+_RRs were conceived to alter the incentives for authors and journals **away from** (...) **novel, positive, clean findings** and **towards** (...) **rigorous research** on important questions._ @soderberg2021initial
 
 
 ## RRs do help {.smaller background-image="img/RRs.png" background-size="40%" background-position="right"}
@@ -260,31 +260,29 @@ _RRs could improve research quality while reducing publication bias..._
 
 ## How RRs work {background-image="img/RRs.webp" background-size="40%" background-position="bottom"}
 
+::: {.incremental}
+
 - Write introduction, method, ... before collecting data!
 - Send to journal for review
-- Revise and resubmit (improve before collecting data)
+- Revise and resubmit (improve **before collecting data**)
 - Once you get _In principle acceptance_:
   + collect data & run planned analysis
   + report results and conclusions & send for final review
 
+:::
 
 ## RRs advantages
 
-- More open, preregistered, reproducible by default  
+::: {.incremental}
 
-- It does not matter if p value is < 0.05   
-
+- More open, preregistered, reproducible by default
+- It does not matter if p value is < 0.05
 - Less incentives for p-hacking
-
 - No hypothesizing after the results are known (HARKing)
+- More trustworthy results, less noise
+- **You still can explore, but have to say explicitly**
 
-- More trustworthy results
-
-::: {.fragment .highlight-red}
-- You still can explore, but have to say explicitly
 :::
-
-
 
 ## Registered reports are great {background-image="img/sold.png" background-size="30%" background-position="center"}
 
@@ -296,11 +294,16 @@ _RRs could improve research quality while reducing publication bias..._
 
 ::: {.column width="70%"}
 
+::: {.incremental}
+
 - Hard to know how to analyze an experiment before having the data
 
 - Always surprises when data arrives. How to create an analysis plan that will hold?
 
 - Collecting ALL-THE-THINGS&#8482; allows me to figure out the best way to do analysis
+
+- My code is a mess. Would take more time to make it shareable...
+:::
 
 :::
 
@@ -318,6 +321,8 @@ _RRs could improve research quality while reducing publication bias..._
 
 ## Background
 
+::: {.incremental}
+
 - At the [CSCN](https://cscn.uai.cl/){target="_blank"} (~5-10 PI's) we used different technologies for experiments: Psychopy, Qualtrics, Limesurvey, jsPsych,...  
 
 - Each protocol started almost from scratch. A single pre-existing task would define the technology used
@@ -328,6 +333,7 @@ _RRs could improve research quality while reducing publication bias..._
 
 - Output data wildly different, data preparation a hard task and error prone
 
+:::
 
 ## Issues
 
@@ -390,15 +396,18 @@ _RRs could improve research quality while reducing publication bias..._
 
 ## Our wish list {background-image="img/magic.png" background-size="30%" background-position="bottom right"}
 
+::: {.incremental}
+
 - Open source software based on standard technologies
 - Reusable tasks (my project feeds future projects)
-- Based on a mature project or technologies [@de2015jspsych] ^[Psych: [https://www.jspsych.org/](https://www.jspsych.org/){target="_blank"}]
+- Based on a mature project or technologies [@de2015jspsych] ^[jsPsych: [https://www.jspsych.org/](https://www.jspsych.org/){target="_blank"}]
 - As many 'automagic' things as possible
-- Easy to create and analyze paradigms
+- Easy to create, analyze and share (paradigms and analysis)
 - Balancing participants
 - Online/offline
 - etc.
 
+:::
 
 
 # The present
@@ -443,7 +452,7 @@ A big catalog of tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker
 
 <BR>
 
-The final goal is to help you **have the data preparation and analysis ready before collecting any real data**, reducing errors in the protocols, and making the move towards registered reports easier
+Help us **have the data preparation and analysis ready before collecting any real data**, reducing errors in the protocols, and making the move towards registered reports easier
 
 
 ## So far
@@ -502,6 +511,8 @@ Discussions, ideas, testing:
 
 ## Features jsPsychMaker {.hscroll .scrollable .smaller}
 
+::: {.incremental}
+
 - Fully open source, based on web standards ([jsPsych](https://www.jspsych.org/){target="_blank"})
 - Reuse ~ 100 tasks
 - Online and offline protocols
@@ -513,6 +524,7 @@ Discussions, ideas, testing:
 - Multilingual support (for a selected number of tasks)
 - All the parameters can be quickly changed editing a single file
 
+:::
 
 ## Available tasks {.hscroll .scrollable .smaller}
 
@@ -556,11 +568,7 @@ rstudioapi::navigateToFile("~/Downloads/ExampleTasks/MultiChoice/MultiChoice_ins
 system("nautilus ~/Downloads/ExampleTasks/MultiChoice/MultiChoice.csv")
 ```
 
-
 3) Create protocol (see next slide)
-
-
-
 
 
 ## Create protocol
@@ -621,6 +629,8 @@ jsPsychMaker::create_protocol(
 
 ## Features jsPsychMonkeys
 
+::: {.incremental}
+
 - Fully open source (R, docker, selenium)
 - Works for online and offline protocols
 - Sequentially and in parallel
@@ -630,6 +640,7 @@ jsPsychMaker::create_protocol(
 - Random pauses or refreshing to simulate human behavior
 - Set random seed to make the monkey's behavior predictable
 
+:::
 
 ## Release monkeys
 
@@ -691,6 +702,8 @@ jsPsychMonkeys::release_the_monkeys(
 
 ## Features jsPsychHelpeR {.hscroll .scrollable .smaller}
 
+::: {.incremental}
+
 - Fully open source (R) 
 - Get tidy output data frames for each task, and for the whole protocol
 - Standard naming for tasks, dimensions, scales, ...
@@ -701,7 +714,7 @@ jsPsychMonkeys::release_the_monkeys(
 - Create a fully reproducible Docker container with the project's data preparation and analysis
 - Create a blinded data frame to perform blinded analyses
 
-
+:::
 
 ## jsPsychHelpeR
 
@@ -766,6 +779,8 @@ utils::browseURL(here::here("jsPsychHelpeR-ExperimentIssues/outputs/reports/repo
 
 ## Limitations
 
+::: {.incremental}
+
 - Easy to create new scales and simple tasks, but complex experimental tasks <span style="color:red;">require javascript knowledge</span> (although there are a good number of examples available)
 
 - Data preparation for new experimental tasks <span style="color:red;">requires expertise in R</span> (simple surveys not so much)  
@@ -774,8 +789,9 @@ utils::browseURL(here::here("jsPsychHelpeR-ExperimentIssues/outputs/reports/repo
 
 - Needs access to a server for online tasks  
 
-- Only behavioral tasks
+- Only behavioral tasks (no EEG fMRI, maybe eyetracker...)
 
+:::
 
 # The future
 
@@ -792,7 +808,7 @@ Development is linked to our needs, time and resources. Future roadmap:
 
 - Templates for common experimental designs (tasks, data preparation and analysis)  
 - More tasks, translations, tests, ...  
-- Upgrade, improve, clean, share
+- Upgrade, improve, clean, simplify, share
 - jsPsychR paper  
 
 
@@ -820,6 +836,8 @@ Development is linked to our needs, time and resources. Future roadmap:
 
 ## Can jsPsychR really help? (1/2)
 
+::: {.incremental}
+
 - Protocols are standardized with (mostly) clean code, open source, and based on web standards 
 
 - Data preparation 90% automatic, standardized, beautiful 
@@ -828,10 +846,15 @@ Development is linked to our needs, time and resources. Future roadmap:
 
 - Time from idea to protocol much lower
 
+- Super easy to self-replicate (adapt, re-run, analysis already works)
+
 - When errors are found and fixed, **old protocols can benefit from the corrections**, old results can be checked, ...
 
+:::
 
 ## Can jsPsychR really help? (2/2)
+
+::: {.incremental}
 
 - Trivial to work on analysis **before collecting human data**
 
@@ -843,7 +866,7 @@ Development is linked to our needs, time and resources. Future roadmap:
 
 - Creating future-proof fully reproducible data preparation projects (with Docker) is one command away ^[`jsPsychHelpeR::create_docker_container()`]
 
-
+:::
 
 ## jsPsychR &#9829; Registered Reports
 
