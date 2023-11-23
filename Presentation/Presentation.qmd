@@ -23,6 +23,9 @@ bibliography: bibliography.bib
 ```{r setup}
 
 ```
+## Presentation
+
+![https://gorkang.github.io/jsPsychRpresentation/](img/QR-presentation.png)
 
 # The past
 _Gather 'round little ones_
@@ -82,7 +85,7 @@ _The persistence of poor methods results partly from incentives that favour them
 
 <BR>
 
-_(...) in the absence of change, the existing incentives will necessarily lead to the degradation of scientific practices._ [@smaldino2016natural] ^[[https://www.youtube.com/watch?v=jdmpja67wzE](https://www.youtube.com/watch?v=jdmpja67wzE)]
+_(...) in the absence of change, the **existing incentives will necessarily lead to the degradation of scientific practices**._ [@smaldino2016natural] ^[[https://www.youtube.com/watch?v=jdmpja67wzE](https://www.youtube.com/watch?v=jdmpja67wzE)]
 
 
 ## Psychology Replication crisis
@@ -227,6 +230,19 @@ Mean number of publications for new hires in the Canadian cognitive psychology j
 _RRs were conceived to alter the incentives for authors and journals **away from** (...) **novel, positive, clean findings** and **towards** (...) **rigorous research** on important questions._ @soderberg2021initial
 
 
+## How RRs work {background-image="img/RRs.webp" background-size="40%" background-position="bottom"}
+
+::: {.incremental}
+
+- Write introduction, method, ... before collecting data!
+- Send to journal for review
+- Revise and resubmit (improve **before collecting data**)
+- Once you get _In principle acceptance_:
+  + collect data & run planned analysis
+  + report results and conclusions & send for final review
+
+:::
+
 ## RRs do help {.smaller background-image="img/RRs.png" background-size="40%" background-position="right"}
 
 :::: {.columns}
@@ -258,31 +274,19 @@ _RRs could improve research quality while reducing publication bias..._
 ::::
 
 
-## How RRs work {background-image="img/RRs.webp" background-size="40%" background-position="bottom"}
-
-::: {.incremental}
-
-- Write introduction, method, ... before collecting data!
-- Send to journal for review
-- Revise and resubmit (improve **before collecting data**)
-- Once you get _In principle acceptance_:
-  + collect data & run planned analysis
-  + report results and conclusions & send for final review
-
-:::
-
 ## RRs advantages
 
 ::: {.incremental}
 
-- More open, preregistered, reproducible by default
-- It does not matter if p value is < 0.05
-- Less incentives for p-hacking
-- No hypothesizing after the results are known (HARKing)
-- More trustworthy results, less noise
+- More open, preregistered, reproducible by design
+- **It does not matter if p < 0.05**: 
+  + Less incentives for p-hacking
+  + No hypothesizing after the results are known (HARKing)
+  + More trustworthy results, less noise
 - **You still can explore, but have to say explicitly**
 
 :::
+
 
 ## Registered reports are great {background-image="img/sold.png" background-size="30%" background-position="center"}
 
@@ -329,9 +333,9 @@ _RRs could improve research quality while reducing publication bias..._
 
 - Multiple implementations of the same tasks, not always exact replicas, not always easy to find
 
-- Some would work in certain computers, other did not
+<!-- - Some would work in certain computers, other did not -->
 
-- Output data wildly different, data preparation a hard task and error prone
+<!-- - Output data wildly different, data preparation a hard task and error prone -->
 
 :::
 
@@ -419,20 +423,13 @@ A few years latter...
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="50%"}
 
-Open source tools to help create experimental paradigms with [jsPsych](https://www.jspsych.org){target="_blank"}, simulate participants and standardize the data preparation and analysis  
-<BR>
-
-1\) [jsPsychMaker](https://github.com/gorkang/jsPsychMaker){target="_blank"}
-
-2\) [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys){target="_blank"}
-
-3\) [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR){target="_blank"}
+Open source tools to create experimental paradigms with [jsPsych](https://www.jspsych.org){target="_blank"}, simulate participants and standardize data preparation and analysis  
 
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 
 ![](img/jsPsych-trinity.png){fig-align="center"}
 
@@ -445,14 +442,17 @@ Open source tools to help create experimental paradigms with [jsPsych](https://w
 
 <BR>
 
-A big catalog of tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker){target="_blank"}. Each task runs with [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys){target="_blank"} to create virtual participants, and have a script in [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR){target="_blank"} to automate data preparation (re-coding, reversing items, calculating dimensions, etc.)
+A big catalog of reusable tasks in [jsPsychMaker](https://github.com/gorkang/jsPsychMaker){target="_blank"}. Each task runs with [jsPsychMonkeys](https://github.com/gorkang/jsPsychMonkeys){target="_blank"} to create virtual participants, and have a script in [jsPsychHelpeR](https://github.com/gorkang/jsPsychHelpeR){target="_blank"} to automate data preparation (re-coding, reversing items, calculating dimensions, etc.)
 
 
 ## The goal
 
 <BR>
 
-Help us **have the data preparation and analysis ready before collecting any real data**, reducing errors in the protocols, and making the move towards registered reports easier
+Help us **have the data preparation and analysis ready before collecting any real data**
+
+- reduce errors in the protocols
+- make the move towards registered reports easier
 
 
 ## So far
@@ -509,6 +509,21 @@ Discussions, ideas, testing:
 
 ![](img/jsPsychMaker.png)
 
+## Available tasks {.hscroll .scrollable .smaller}
+
+```{r}
+#| eval: true
+#| echo: false
+#| code-fold: false
+
+DF_raw = readr::read_csv(here::here("Presentation/data/DF_tasks.csv"))
+
+DT::datatable(DF_raw, filter = 'top', options = list(pageLength = 100, dom = 't'), rownames = FALSE) |>
+    DT::formatStyle(columns = c(1, 2, 3), fontSize = '75%')
+
+```
+
+
 ## Features jsPsychMaker {.hscroll .scrollable .smaller}
 
 ::: {.incremental}
@@ -526,23 +541,7 @@ Discussions, ideas, testing:
 
 :::
 
-## Available tasks {.hscroll .scrollable .smaller}
-
-```{r}
-#| eval: true
-#| echo: false
-#| code-fold: false
-
-DF_raw = readr::read_csv(here::here("Presentation/data/DF_tasks.csv"))
-
-DT::datatable(DF_raw, filter = 'top', options = list(pageLength = 100, dom = 't'), rownames = FALSE) |>
-    DT::formatStyle(columns = c(1, 2, 3), fontSize = '75%')
-
-```
-
-## Create New Tasks {.smaller}
-
-Creating new tasks is as simple as: 
+## Create Tasks and Protocols {.smaller}
 
 1) Copy example task to your computer
 
@@ -550,8 +549,7 @@ Creating new tasks is as simple as:
 
 jsPsychMaker::copy_example_tasks(
   destination_folder = "~/Downloads/ExampleTasks", 
-  which_tasks = "MultiChoice"
-  )
+  which_tasks = "MultiChoice")
 
 ```
 
@@ -559,7 +557,7 @@ jsPsychMaker::copy_example_tasks(
 
 ```{r}
 # Open source document
-rstudioapi::navigateToFile(here::here("R/BRS.txt"))
+rstudioapi::navigateToFile(here::here("R/BRS.txt")) # Brief Resilience Scale
 
 # Edit instructions
 rstudioapi::navigateToFile("~/Downloads/ExampleTasks/MultiChoice/MultiChoice_instructions.html")
@@ -569,25 +567,32 @@ system("nautilus ~/Downloads/ExampleTasks/MultiChoice/MultiChoice.csv")
 ```
 
 3) Create protocol (see next slide)
-
-
-## Create protocol
-
-<BR>
-Create a protocol with: 
-
-- 1 existing task: Berlin Numeracy Test
-- the adapted Example task (Brief Resilience Scale)
-
-
 ```{r}
 jsPsychMaker::create_protocol(
-  canonical_tasks = c("BNT"),
+  canonical_tasks = c("BNT"), # Berlin Numeracy Test
   folder_tasks = "~/Downloads/ExampleTasks/",
   folder_output = "~/Downloads/protocol9996",
   launch_browser = TRUE
 )
 ```
+
+<!-- ## Create protocol -->
+
+<!-- <BR> -->
+<!-- Create a protocol with:  -->
+
+<!-- - 1 existing task: Berlin Numeracy Test -->
+<!-- - the adapted Example task (Brief Resilience Scale) -->
+
+
+<!-- ```{r} -->
+<!-- jsPsychMaker::create_protocol( -->
+<!--   canonical_tasks = c("BNT"), -->
+<!--   folder_tasks = "~/Downloads/ExampleTasks/", -->
+<!--   folder_output = "~/Downloads/protocol9996", -->
+<!--   launch_browser = TRUE -->
+<!-- ) -->
+<!-- ``` -->
 
 
 ## jsPsychR tools
