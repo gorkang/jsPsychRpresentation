@@ -397,23 +397,33 @@ if (nrow(DF_Issues > 0)) {
 ```{r plot4}
 
 
-Issues = DF_model |> 
+Issues = 
+  DF_model |> 
   select(id, `Frequency of Issues`, `Number of Issues`, Experience) |> 
   rename(Frequency = `Frequency of Issues`) |> 
   drop_na() |> 
   group_by(Frequency, Experience) |> 
   summarise(Issues = mean(`Number of Issues`),.groups = "drop") |> 
+  arrange(Experience) |> 
   pivot_wider(names_from = Experience, values_from = Issues) |> 
+  arrange(Frequency) |> 
   select(-Frequency) |> 
   as.matrix()
 
+ID_frequency = sort(unique(DF_model$`Frequency of Issues`))
+ID_experience = sort(unique(DF_model$Experience))
+# if (dim(Issues) == c(5,5))
 
-
-rownames(Issues) <- c("Never", "Rarely", "Sometimes", "Often", "Always")
-colnames(Issues) <- c("Student", "Postdoc", "Early Career", "Senior")
-
-Frequency = c("Never", "Rarely", "Sometimes", "Often", "Always" )
+Frequency = c("Never", "Rarely", "Sometimes", "Often", "Always")  
+rownames(Issues) = Frequency[ID_frequency]
 Experience = c("Student", "Postdoc", "Early Career", "Senior")
+colnames(Issues) = Experience[ID_experience]  
+
+# rownames(Issues) <- c("Never", "Rarely", "Sometimes", "Often", "Always")
+# colnames(Issues) <- c("Student", "Postdoc", "Early Career", "Senior")
+
+# Frequency = c("Never", "Rarely", "Sometimes", "Often", "Always" )
+# Experience = c("Student", "Postdoc", "Early Career", "Senior")
 
 plot1 = plotly::plot_ly(x = ~ Experience,
                         y = ~ Frequency,

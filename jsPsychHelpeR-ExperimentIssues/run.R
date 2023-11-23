@@ -21,7 +21,7 @@ jsPsychHelpeR::get_zip(pid = 38, what = "data", where = "data/")
   # rstudioapi::navigateToFile("_targets.R")
 
   # Visualize targets tree
-  targets::tar_visnetwork(targets_only = TRUE, label = "time")
+  # targets::tar_visnetwork(targets_only = TRUE, label = "time")
 
   # Run data preparation 
   targets::tar_make()
@@ -30,10 +30,10 @@ jsPsychHelpeR::get_zip(pid = 38, what = "data", where = "data/")
   # testthat::snapshot_review()
   
   # Open report
-  browseURL("outputs/reports/report_analysis.html")
+  browseURL("outputs/reports/report_analysis.html", browser = "firefox")
   
   # OLD report with monkey's data
-  browseURL("outputs/reports/report_analysis_monkeys.html")
+  browseURL("outputs/reports/report_analysis_monkeys.html", browser = "firefox")
   
   
 # Check results -----------------------------------------------------------
